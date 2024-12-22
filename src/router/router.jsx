@@ -4,8 +4,12 @@ import {
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
 import Marathons from "../pages/Marathons/Marathons";
-import Login from "../components/Login/Login";
-import Register from "../components/Register/Register";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import { GrDashboard } from "react-icons/gr";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../pages/Dashboard/Dashboard";
+
 
   const router = createBrowserRouter([
     {
@@ -19,15 +23,19 @@ import Register from "../components/Register/Register";
         },
         {
             path: "/marathons",
-            element: <Marathons></Marathons>,   
+            element: <PrivateRoute><Marathons></Marathons></PrivateRoute>,   
         },
         {
             path: "/login",
-            element: <Login></Login>,   
+            element: <Login></Login>  
         },
         {
             path: "/register",
             element: <Register></Register>,   
+        },
+        {
+            path: "/dashboard",
+            element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>  
         },
       ]
     },

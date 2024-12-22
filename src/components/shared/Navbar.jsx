@@ -1,7 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logoo.png';
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext/AuthContext';
 
 const Navbar = () => {
+    const { user, handleSignOut } = useContext(AuthContext);
     const links = <>
         <li>
             <NavLink
@@ -10,6 +13,15 @@ const Navbar = () => {
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
                 }>
                 Marathons
+            </NavLink>
+        </li>
+        <li className={`${user ? 'block' : 'hidden'}`}>
+            <NavLink
+                to='/dashboard'
+                className={({ isActive }) =>
+                    isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
+                }>
+                Dashboard
             </NavLink>
         </li>
 
@@ -49,10 +61,34 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <ul className="flex items-center gap-5">
                         {links}
-                        <div className='flex items-center gap-2'>
-                        <Link to='/login' className='bg-blue-400 text-base font-normal btn btn-xs md:btn-sm rounded-none border-none shadow-none '>Login</Link>
-                        <Link to='/register' className='bg-[#fae102] btn btn-xs md:btn-sm rounded-none border-none shadow-none text-base font-normal'>Register</Link>
+                        {
+                            user ?
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar border-2 border-blue-800">
+                                        <div className="w-10 rounded-full">
+
+                                            <img
+                                                referrerPolicy="no-referrer"
+                                                alt="user"
+                                                src={user?.photoURL} />
+                                        </div>
+                                    </div>
+                                    <ul
+                                        tabIndex={0}
+                                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                        
+                                        <li className='flex justify-center items-center text-xl text-blue-800 font-bold mb-2'>{user?.displayName}</li>
+                                        <li className="text-red-500 btn btn-xs" onClick={handleSignOut}>Logout</li>
+                                    </ul>
+                                </div>
+
+                                :
+                                <div className='flex items-center gap-2'>
+                            <Link to='/login' className='bg-blue-400 text-base font-normal btn btn-xs md:btn-sm rounded-none border-none shadow-none '>Login</Link>
+                            <Link to='/register' className='bg-[#fae102] btn btn-xs md:btn-sm rounded-none border-none shadow-none text-base font-normal'>Register</Link>
                         </div>
+                        }
+                        
                     </ul>
                 </div>
             </div>
