@@ -77,9 +77,9 @@ const Login = () => {
             })
     }
     return (
-        <div className="hero min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse my-10">
-                <div className="text-center lg:text-left w-96 lg:w-[700px] lg:flex-1">
+        <div className="hero min-h-screen w-[95%] md:w-[90%] mx-auto max-w-7xl">
+            <div className="hero-content w-full flex-col lg:flex-row-reverse mt-0 mb-5 md:mb-8 lg:my-10">
+                <div className="text-center lg:text-left w-60 md:w-96 lg:w-[700px] lg:flex-1">
                     <Lottie animationData={loginLottieData}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl lg:flex-1 p-6">

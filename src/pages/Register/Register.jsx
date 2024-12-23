@@ -12,6 +12,7 @@ const Register = () => {
     const { createUser, handleUpdateProfile,setUser ,setLoading} = useContext(AuthContext);
 
     const handleRegister = e => {
+        setError('');
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -19,11 +20,20 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const conPassword = form.conPassword.value;
-        setError('');
-        if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
-            setError('password must contain at least one uppercase letter, one lowercase letter and length should be at least 6');
+
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters long!");
             return;
         }
+        if (!/[a-z]/.test(password)) {
+            setError("Password must contain at least one lowercase letter!");
+            return;
+        }
+        if (!/[A-Z]/.test(password)) {
+            setError("Password must contain at least one uppercase letter!");
+            return;
+        }
+        
         if (password !== conPassword) {
             setError("password didn't match")
             return;
@@ -69,9 +79,9 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse my-10">
-                <div className="text-center lg:text-left w-96 lg:w-[700px] lg:flex-1">
+        <div className="hero min-h-screen w-[95%] md:w-[90%] mx-auto max-w-7xl">
+            <div className="hero-content w-full flex-col lg:flex-row-reverse mt-0 mb-5 md:mb-8 lg:my-10">
+                <div className="text-center lg:text-left w-60 md:w-96 lg:w-[700px] lg:flex-1">
                     <Lottie animationData={registerLottieData}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl lg:flex-1">
