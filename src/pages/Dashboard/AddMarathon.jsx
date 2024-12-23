@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Header from '../../components/shared/Header';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddMarathon = () => {
     const [startRegDate, setStartRegDate] = useState(null);
@@ -12,8 +14,9 @@ const AddMarathon = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        const form= e.target;
         const formData = new FormData(event.target);
-        const marathonDetails = {
+        const newMarathon = {
             title: formData.get('title'),
             startRegDate,
             endRegDate,
@@ -26,11 +29,21 @@ const AddMarathon = () => {
             organizer_email: user?.email,
             totalRegistrations: 0
         };
-        console.log(marathonDetails);
+        console.log(newMarathon);
 
-        // Success message & save data to the database
-        alert('Marathon created successfully!');
-        // Add your database integration logic here
+
+        axios.post('http://localhost:5000/marathons',newMarathon)
+        .then(data=>{
+            if (data.data.insertedId) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Marathon created successfully!",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                form.reset();
+            };
+        })
     };
 
     return (
@@ -132,10 +145,10 @@ const AddMarathon = () => {
                 <div>
                     <label className="block text-sm font-medium text-gray-700">Marathon Image</label>
                     <input
-                        type="file"
+                        type="url"
                         name="image"
-                        className="file-input file-input-bordered w-full mt-1"
-                        accept="image/*"
+                        placeholder="Enter marathon image URL"
+                        className="file-input file-input-bordered w-full mt-1 p-3"
                         required
                     />
                 </div>
