@@ -12,6 +12,8 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import AddMarathon from "../pages/Dashboard/AddMarathon";
 import MyMarathonList from "../pages/Dashboard/MyMarathonList";
 import MyApplyList from "../pages/Dashboard/MyApplyList";
+import Details from "../pages/Details/Details";
+import Registration from "../pages/Registration/Registration";
 
 
 const router = createBrowserRouter([
@@ -36,6 +38,16 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/marathons/:id",
+        element: <Details></Details>,
+        loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
+      },
+      {
+        path: "/registration/:id",
+        element: <Registration></Registration>,
+        loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
       },
       {
         path: "/dashboard",

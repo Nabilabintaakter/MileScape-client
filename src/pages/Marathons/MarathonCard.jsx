@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MarathonCard = ({ marathon }) => {
-    const { image, title, location, startRegDate, endRegDate } = marathon || {};
+    const { _id, image, title, location, startRegDate, endRegDate } = marathon || {};
 
     return (
         <div className=" rounded overflow-hidden shadow-lg bg-white transform transition duration-300 group">
@@ -34,9 +35,9 @@ const MarathonCard = ({ marathon }) => {
                 </div>
                 {/* Button Section */}
                 <div className="mt-6">
-                    <button className="bg-[#f0d802] text-white py-2 px-6 rounded-sm btn btn-sm border-none hover:bg-[#d3be01] transition duration-500 font-semibold  hover:shadow-lg">
+                    <Link to={`/marathons/${_id}`} className="bg-[#f0d802] text-white py-2 px-6 rounded-sm btn btn-sm border-none hover:bg-[#d3be01] transition duration-500 font-semibold  hover:shadow-lg">
                         See Details
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

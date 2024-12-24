@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     const [activeIndex, setActiveIndex] = useState(0); // Track the active slide index
@@ -86,9 +87,9 @@ const Banner = () => {
                                         </p>
                                     </Fade>
                                     <Fade triggerOnce direction="left" duration={1000} delay={600}>
-                                        <button className="px-6 py-2 bg-yellow-500 text-black text-sm md:text-base font-semibold rounded hover:bg-yellow-600 transition-all">
+                                        <Link to='/marathons' className="px-6 py-2 bg-yellow-500 text-black text-sm md:text-base font-semibold rounded hover:bg-yellow-600 transition-all">
                                             Join Now
-                                        </button>
+                                        </Link>
                                     </Fade>
                                 </div>
                             </div>

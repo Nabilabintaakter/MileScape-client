@@ -21,7 +21,7 @@ const Marathons = () => {
                             
                             triggerOnce
                             duration={1000}
-                            delay={index * 200}  // Dynamic delay for each card
+                            delay={index * 50}  // Dynamic delay for each card
                         >
                             <MarathonCard marathon={marathon} />
                         </Fade>

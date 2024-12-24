@@ -54,11 +54,11 @@ const Testimonial = () => {
                     <div>
                         <p className="uppercase text-sm font-semibold mb-2">Testimonials</p>
                         <h2 className="text-2xl lg:text-4xl font-bold mt-2 md:mt-4">
-                            Our Members' Satisfaction
+                            Our Members Satisfaction
                         </h2>
                         <div className="w-16 h-1 bg-yellow-400 mt-4 lg:mt-8 mb-4 md:mb-6"></div>
                         <Fade direction="left" triggerOnce delay='50'>
-                        <p className="text-gray-400">
+                        <p className="text-gray-400 w-full md:w-[70%]">
                             Discover how our Marathon Management System has transformed the way runners, coaches, and event organizers interact with our platform. Read firsthand experiences from our satisfied users!
                         </p>
                         </Fade>
