@@ -20,7 +20,7 @@ const UpcomingMarathons = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-        }} className='w-full py-16'>
+        }} className='w-full pt-16 md:pb-20 lg:pb-28'>
             <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl rounded-md '>
                 <Fade direction="up" triggerOnce duration={2000}>
                     <Header title='Upcoming Marathons' subTitle='Get Ready to Join the Race'></Header>
@@ -35,7 +35,7 @@ const UpcomingMarathons = () => {
                                 direction="up" 
                                 triggerOnce 
                                 duration={1000} 
-                                delay={index * 200}  // Dynamic delay for each card
+                                delay={index * 200}  
                             >
                                 <UpcomingCard marathon={marathon}></UpcomingCard>
                             </Fade>

@@ -9,7 +9,6 @@ const UpcomingCard = ({ marathon }) => {
         startRegDate,
         endRegDate,
         marathonStartDate,
-        description,
         ticketPrice,
         category,
         distance,
@@ -27,8 +26,7 @@ const UpcomingCard = ({ marathon }) => {
             : "TBD";
 
     return (
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-md overflow-hidden h-auto lg:h-60">
-            {/* Image Section */}
+        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-md overflow-hidden h-auto md:h-64  lg:h-60">
             <div className="w-full md:w-2/5">
                 <img
                     src={image}
@@ -36,15 +34,12 @@ const UpcomingCard = ({ marathon }) => {
                     className="h-full w-full object-cover"
                 />
             </div>
-
-            {/* Content Section */}
-            <div className="w-full md:w-3/5 flex flex-col md:flex-row">
-                {/* Left Content */}
+            <div className="text-xs lg:text-base w-full md:w-3/5 flex flex-col md:flex-row ">
                 <div className="flex-1 p-6 bg-[#202020] text-white">
                     <h2 className="text-xl font-bold mb-4 text-yellow-400">
                         {title || "Marathon Title"}
                     </h2>
-                    <ul className=" text-gray-300 flex flex-col justify-between h-full">
+                    <ul className=" text-gray-300 flex flex-col gap-2 md:gap-0 md:justify-between h-full">
                         <li className="flex items-center gap-2">
                             <FaCalendarAlt className="text-yellow-400" />
                             <span>
@@ -81,9 +76,7 @@ const UpcomingCard = ({ marathon }) => {
                         </li>
                     </ul>
                 </div>
-
-                {/* Ticket Section */}
-                <div className="bg-[#424242] flex flex-col justify-center items-center w-full md:w-[35%] p-4">
+                <div className="bg-[#424242] flex flex-col justify-center items-center w-full md:w-[35%] p-4 border-l-[1px] border-dashed border-l-yellow-400">
                     <p className="text-4xl font-bold text-yellow-400">
                         ${ticketPrice || "Free"}
                     </p>
