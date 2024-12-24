@@ -14,7 +14,7 @@ const Footer = () => {
       className="text-white relative"
     >
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/80"></div>
 
       <div className="w-full mx-auto max-w-7xl px-6 py-10 relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* About Section */}

@@ -5,16 +5,17 @@ import Header from '../../components/shared/Header';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Fade } from 'react-awesome-reveal';
 
 const AddMarathon = () => {
     const [startRegDate, setStartRegDate] = useState(null);
     const [endRegDate, setEndRegDate] = useState(null);
     const [marathonStartDate, setMarathonStartDate] = useState(null);
-    const {user}= useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const handleSubmit = e => {
         e.preventDefault();
-        const form= e.target;
+        const form = e.target;
         const formData = new FormData(event.target);
         const newMarathon = {
             title: formData.get('title'),
@@ -32,23 +33,25 @@ const AddMarathon = () => {
         console.log(newMarathon);
 
 
-        axios.post('http://localhost:5000/marathons',newMarathon)
-        .then(data=>{
-            if (data.data.insertedId) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Marathon created successfully!",
-                    showConfirmButton: false,
-                    timer: 2000
-                });
-                form.reset();
-            };
-        })
+        axios.post('http://localhost:5000/marathons', newMarathon)
+            .then(data => {
+                if (data.data.insertedId) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Marathon created successfully!",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    form.reset();
+                };
+            })
     };
 
     return (
         <div className="w-[95%] mx-auto max-w-4xl mt-2 ">
-            <Header title='Create and Manage Marathon Events' subTitle='Add New Marathon'></Header>
+            <Fade direction="up" triggerOnce duration={2000}>
+                <Header title='Create and Manage Marathon Events' subTitle='Add New Marathon'></Header>
+            </Fade>
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6 md:p-4 lg:p-8 space-y-6">
                 {/* Marathon Title */}
                 <div>
