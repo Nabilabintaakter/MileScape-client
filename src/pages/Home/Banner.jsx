@@ -32,9 +32,9 @@ const Banner = () => {
                     <div
                         className="hero h-[400px] lg:h-[500px] font-sans"
                         style={{
-                            backgroundImage: `url(https://i.ibb.co.com/hV3NfQD/11.webp)`,
+                            backgroundImage: `url(https://i.ibb.co.com/wg3TMpP/landscape-78058-1280.jpg)`,
                         }}>
-                        <div className="hero-overlay bg-opacity-80"></div>
+                        <div className="hero-overlay bg-opacity-50"></div>
                         <Fade cascade damping={0.1} duration={2000}>
                             <div className="hero-content text-neutral-content text-center">
                                 <div className="text-white">
@@ -51,9 +51,9 @@ const Banner = () => {
                 <SwiperSlide><div
                     className="hero h-[400px] lg:h-[500px] font-sans"
                     style={{
-                        backgroundImage: `url(https://i.ibb.co.com/VDtRZb0/10.webp)`,
+                        backgroundImage: `url(https://i.ibb.co.com/HCVTT1b/tokyo-tokyo-marathon-event-239493.jpg)`,
                     }}>
-                    <div className="hero-overlay bg-opacity-80"></div>
+                    <div className="hero-overlay bg-opacity-50"></div>
                     <Fade>
                         <div className="hero-content text-neutral-content text-center">
                             <div className="text-white">
@@ -71,9 +71,9 @@ const Banner = () => {
                     <div
                         className="hero h-[400px] lg:h-[500px] font-sans"
                         style={{
-                            backgroundImage: `url(https://i.ibb.co.com/V9k0GJ6/5.webp)`,
+                            backgroundImage: `url(https://i.ibb.co.com/kgBbmVg/footer.jpg)`,
                         }}>
-                        <div className="hero-overlay bg-opacity-80"></div>
+                        <div className="hero-overlay bg-opacity-50"></div>
                         <Fade>
                             <div className="hero-content text-neutral-content text-center">
                                 <div className="text-white">

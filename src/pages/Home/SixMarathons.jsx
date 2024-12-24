@@ -20,16 +20,16 @@ const SixMarathons = () => {
             backgroundRepeat: "no-repeat",
         }} className='w-full py-16'>
             <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl  bg-white/60 p-6 md:p-8 lg:p-16 rounded-md backdrop-blur-sm'>
-                <div className=" mb-3 md:mb-6 lg:mb-8">
+                <div className=" mb-3 md:mb-6 lg:mb-10">
                     {/* Section Title */}
                     <h3 className="font-semibold text-gray-600 uppercase">
                         Featured Marathons
                     </h3>
-                    <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mt-2">
+                    <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mt-2 md:mt-4">
                         Discover, Register & Participate
                     </h1>
                     {/* Underline */}
-                    <div className="mt-4 md:mt-6 w-24 h-1 bg-[#fae102] rounded"></div>
+                    <div className="mt-2 md:mt-4 lg:mt-8 w-24 h-1 bg-[#fae102] rounded"></div>
 
                 </div>
                 <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
