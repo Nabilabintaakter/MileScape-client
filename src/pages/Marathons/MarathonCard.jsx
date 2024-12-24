@@ -8,15 +8,15 @@ const MarathonCard = ({ marathon }) => {
             {/* Image Section */}
             <div className="relative ">
                 <img
-                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110 ease-in-out"
                     src={image}
                     alt={title}
                 />
                 <div className="absolute bottom-0 w-full bg-gray-800 bg-opacity-75 text-white py-3 text-center">
-                    <h3 className="font-bold text-xl group-hover:text-[#fae102] transition duration-300">
+                    <h3 className="font-bold text-xl group-hover:text-[#fae102] transition duration-500">
                         {title}
                     </h3>
-                    <p className="text-sm group-hover:text-[#fae102] transition duration-300">
+                    <p className="text-sm group-hover:text-[#fae102] transition duration-500">
                         {location}
                     </p>
                 </div>
@@ -34,7 +34,7 @@ const MarathonCard = ({ marathon }) => {
                 </div>
                 {/* Button Section */}
                 <div className="mt-6">
-                    <button className="bg-[#f0d802] text-white py-2 px-6 rounded-sm btn btn-sm border-none hover:bg-[#d3be01] transition duration-300 font-semibold  hover:shadow-lg">
+                    <button className="bg-[#f0d802] text-white py-2 px-6 rounded-sm btn btn-sm border-none hover:bg-[#d3be01] transition duration-500 font-semibold  hover:shadow-lg">
                         See Details
                     </button>
                 </div>
