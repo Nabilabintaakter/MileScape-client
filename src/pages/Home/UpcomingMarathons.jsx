@@ -27,7 +27,7 @@ const UpcomingMarathons = () => {
                 </Fade>
 
                 {/* Marathons Grid */}
-                <div className='w-full grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 mt-10 md:mt-16'>
+                <div className='w-full grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 mt-10 md:mt-16 pb-16 md:pb-0'>
                     {
                         marathons.map((marathon, index) => (
                             <Fade 

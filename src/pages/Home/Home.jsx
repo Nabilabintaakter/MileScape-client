@@ -3,6 +3,7 @@ import Banner from './Banner';
 import SixMarathons from './SixMarathons';
 import FeaturesSection from './FeaturesSection';
 import UpcomingMarathons from './UpcomingMarathons';
+import Testimonial from './Testimonial';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <FeaturesSection></FeaturesSection>
             <SixMarathons></SixMarathons>
             <UpcomingMarathons></UpcomingMarathons>
+            <Testimonial></Testimonial>
         </div>
     );
 };
