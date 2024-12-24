@@ -8,19 +8,19 @@ const FeaturesSection = () => {
       icon: <FaAward className="text-5xl text-yellow-400" />,
       title: "Best Running Club",
       description:
-        "Join the top-rated running community, known for organizing professional and exciting marathon events.",
+        "Join a top-rated running club that hosts exciting and professional marathon events regularly.",
     },
     {
       icon: <FaUserCheck className="text-5xl text-yellow-400" />,
       title: "Certified Instructors",
       description:
-        "Our certified coaches ensure that participants are well-guided and motivated to achieve their goals.",
+        "Our certified instructors are here to guide and motivate you to reach your fitness goals easily.",
     },
     {
       icon: <FaUsers className="text-5xl text-yellow-400" />,
       title: "1000+ Active Members",
       description:
-        "Become a part of a growing network of marathon enthusiasts and fitness lovers across the globe.",
+        "Be part of a growing network of active runners and fitness lovers from around the world.",
     },
   ];
 
@@ -29,7 +29,7 @@ const FeaturesSection = () => {
 
   return (
     <div className="bg-[#202020] py-8 md:py-10">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-[95%] md:w-[90%] max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"> 
         {features.map((feature, index) => (
           <Fade
             key={index}
