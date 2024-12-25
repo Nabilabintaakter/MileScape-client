@@ -3,6 +3,7 @@ import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import UpdateModal from './UpdateModal';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import UpdateMarathon from './UpdateMarathon';
 
 const MarathonTableRow = ({marathons,setMarathons, marathon, index ,reload,setReload}) => {
     const { _id, title, marathonStartDate, location, distance } = marathon || {};
@@ -27,11 +28,11 @@ const MarathonTableRow = ({marathons,setMarathons, marathon, index ,reload,setRe
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/marathon-registrations/${_id}`)
+                axios.delete(`http://localhost:5000/myMarathons/${_id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
                             console.log(data.data);
-                            const remaining = marathons.filter(apply => apply._id !== id);
+                            const remaining = marathons.filter(marathon => marathon._id !== id);
                             setMarathons(remaining);
                         }
                     })
@@ -62,7 +63,7 @@ const MarathonTableRow = ({marathons,setMarathons, marathon, index ,reload,setRe
                 </td>
             </tr>
             {/* Modal for Update */}
-            {isModalOpen && <UpdateModal reload={reload} setReload={setReload} setmarathons={setmarathons} apply={apply} isOpen={isModalOpen} onClose={closeModal} />}
+            {isModalOpen && <UpdateMarathon reload={reload} setReload={setReload} setMarathons={setMarathons} marathon={marathon} isOpen={isModalOpen} onClose={closeModal} />}
         </>
     );
 };

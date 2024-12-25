@@ -6,12 +6,14 @@ import AuthContext from '../../context/AuthContext/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Fade } from 'react-awesome-reveal';
+import { useNavigate } from 'react-router-dom';
 
 const AddMarathon = () => {
     const [startRegDate, setStartRegDate] = useState(null);
     const [endRegDate, setEndRegDate] = useState(null);
     const [marathonStartDate, setMarathonStartDate] = useState(null);
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -43,7 +45,9 @@ const AddMarathon = () => {
                         timer: 2000
                     });
                     form.reset();
-                    navigate('/myMarathons')
+                    setTimeout(() => {
+                        navigate('/dashboard/myMarathonList')
+                    }, 2000)
                 };
             })
     };

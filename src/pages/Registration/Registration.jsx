@@ -54,7 +54,9 @@ const Registration = () => {
                         showConfirmButton: false,
                         timer: 2000
                     });                    
-                    navigate('/dashboard/myApplyList')
+                    setTimeout(() => {
+                        navigate('/dashboard/myApplyList')
+                    }, 3000)
                 };
             })
             .catch(error => {
