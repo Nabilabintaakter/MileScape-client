@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logoo.png';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
@@ -7,6 +7,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 const Navbar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
     const [isScrolled, setIsScrolled] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,6 +19,13 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const signOutHandler = ()=>{
+        handleSignOut()
+        .then(()=>{
+            navigate('/login')
+        })
+    } 
 
     const links = <>
         <li>
@@ -106,7 +114,7 @@ const Navbar = () => {
                                             <li className='flex justify-center items-center text-xl text-blue-800 font-bold mb-2'>{user?.displayName}</li>
                                         </ul>
                                     </div>
-                                    <button onClick={handleSignOut} className='bg-red-500  rounded-none border-none shadow-none text-white font-medium py-1 px-2  md:py-2 md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2 '><FaSignOutAlt></FaSignOutAlt> Logout</button>
+                                    <button onClick={signOutHandler} className='bg-red-500  rounded-none border-none shadow-none text-white font-medium py-1 px-2  md:py-2 md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2 '><FaSignOutAlt></FaSignOutAlt> Logout</button>
                                 </div>
                                 :
                                 <div className='flex items-center gap-2'>

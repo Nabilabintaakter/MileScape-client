@@ -41,12 +41,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/marathons/:id",
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
       },
       {
         path: "/registration/:id",
-        element: <Registration></Registration>,
+        element: <PrivateRoute><Registration></Registration></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
       },
       {

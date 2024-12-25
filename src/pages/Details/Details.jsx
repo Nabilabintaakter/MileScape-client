@@ -77,7 +77,7 @@ const Details = () => {
                             </div>
                             <Fade triggerOnce delay={800} direction="down">
                                 <Link to={`/registration/${_id}`}
-                                    className={`bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg text-lg w-full md:w-auto transition duration-300 ${isRegistrationOpen ? '' : 'opacity-50 cursor-not-allowed'}`}
+                                    className={`bg-blue-600 text-white hover:bg-gray-100 hover:text-blue-800 hover:border-2 hover:border-blue-800 font-medium border-2 border-blue-600 btn rounded-lg text-lg w-full md:w-auto transition duration-500 ${isRegistrationOpen ? '' : 'opacity-50 cursor-not-allowed'}`}
 
                                     disabled={!isRegistrationOpen}
                                 >
