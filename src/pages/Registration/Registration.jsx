@@ -1,16 +1,21 @@
 import { useContext } from 'react';
 import bg from '../../assets/upcoming.jpg';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
     const marathon = useLoaderData();
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const {
+        _id,
         title,
         marathonStartDate,
-        totalRegistrations,
+        location,
+        distance,
     } = marathon;
 
     const formattedDate = new Date(marathonStartDate).toLocaleDateString('en-US', {
@@ -21,17 +26,50 @@ const Registration = () => {
 
     const handleRegistration = e => {
         e.preventDefault();
-        // Registration logic goes here (e.g., saving to DB, updating count)
+        const form = e.target;
+        const formData = new FormData(e.target);
+        const registrationData = {
+            marathonId: _id,
+            location,
+            distance,
+            marathonTitle: formData.get('marathonTitle'),  // Get title
+            marathonStartDate: marathonStartDate,  // Use formatted date for marathon start
+            email: user?.email,  // Email from the logged-in user
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            phone: formData.get('phone'),
+            additionalInfo: formData.get('additionalInfo'),
+
+        };
+        console.log(registrationData);
+
+        axios.post('http://localhost:5000/marathon-registrations', registrationData)
+            .then(data => {
+                if (data.data.insertedId) {
+                    form.reset();
+                    Swal.fire({
+                        icon: "success",
+                        title: "Registration Successful!",
+                        text: "You have been successfully registered for the marathon.",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });                    
+                    navigate('/dashboard/myApplyList')
+                };
+            })
+            .catch(error => {
+                console.error("Error registering for the marathon:", error);
+            });
     };
 
     return (
         <div
-            className="  flex justify-center items-center py-5 md:py-10"
+            className="flex justify-center items-center py-5 md:py-10"
             style={{
                 backgroundImage: `url(${bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
             }}
         >
             <form
@@ -50,6 +88,7 @@ const Registration = () => {
                         <input
                             type="text"
                             placeholder="first name*"
+                            name="firstName"
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                             required
                         />
@@ -59,6 +98,7 @@ const Registration = () => {
                         <input
                             type="text"
                             placeholder="last name*"
+                            name="lastName"
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                             required
                         />
@@ -68,9 +108,10 @@ const Registration = () => {
                         <input
                             type="email"
                             placeholder="email*"
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-                            readOnly
+                            name="email"
                             value={user?.email}
+                            readOnly
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                         />
                     </div>
                     <div>
@@ -78,6 +119,7 @@ const Registration = () => {
                         <input
                             type="number"
                             placeholder="phone*"
+                            name="phone"
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                             required
                         />
@@ -86,24 +128,27 @@ const Registration = () => {
                         <label className="block text-sm font-medium text-gray-700">Marathon Title</label>
                         <input
                             type="text"
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-                            readOnly
+                            name="marathonTitle"
                             value={title}
+                            readOnly
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                         />
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Start Date</label>
                         <input
                             type="text"
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
-                            readOnly
+                            name="startDate"
                             value={formattedDate}
+                            readOnly
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                         />
                     </div>
                     <div className="col-span-2">
                         <label className="block text-sm font-medium text-gray-700">Additional Info (Optional)</label>
                         <textarea
                             placeholder="Write any additional notes here..."
+                            name="additionalInfo"
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                         ></textarea>
                     </div>
@@ -111,7 +156,7 @@ const Registration = () => {
                 <div className="mt-6">
                     <button
                         type="submit"
-                        className="w-full btn bg-yellow-500 text-white font-medium rounded-md shadow hover:bg-yellow-50 border-yellow-500 hover:text-yellow-600 hover:border-2 transition-all duration-300 hover:border-yellow-600   focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+                        className="w-full btn bg-yellow-500 text-white font-medium rounded-md shadow hover:bg-yellow-50 border-yellow-500 hover:text-yellow-600 hover:border-2 transition-all duration-300 hover:border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
                     >
                         REGISTER NOW!
                     </button>

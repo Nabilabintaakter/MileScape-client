@@ -6,7 +6,6 @@ import Home from "../pages/Home/Home";
 import Marathons from "../pages/Marathons/Marathons";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import { GrDashboard } from "react-icons/gr";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import AddMarathon from "../pages/Dashboard/AddMarathon";
@@ -14,6 +13,7 @@ import MyMarathonList from "../pages/Dashboard/MyMarathonList";
 import MyApplyList from "../pages/Dashboard/MyApplyList";
 import Details from "../pages/Details/Details";
 import Registration from "../pages/Registration/Registration";
+
 
 
 const router = createBrowserRouter([

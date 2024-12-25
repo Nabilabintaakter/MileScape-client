@@ -28,7 +28,6 @@ const Login = () => {
                 setLoading(false);
                 setUser(res.user);
                 Swal.fire({
-                    position: "top-center",
                     icon: "success",
                     title: "Successfully Logged in to your account!",
                     showConfirmButton: false,
