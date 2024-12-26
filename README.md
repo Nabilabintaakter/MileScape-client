@@ -3,7 +3,7 @@
 The **Milescape** is a full-stack web application designed to simplify the organization of marathon events. It connects event organizers with participants, enabling users to create, manage, and apply for marathon events seamlessly.
 
 ## 🌐 **Live Website**
-[Visit the Live Site](YOUR_LIVE_SITE_URL)
+[Visit the Live Site](https://coffee-store-5b114.web.app/)
 
 ## ✨ **Features**
 1. **Dynamic User Experience**: Users can create, update, and delete marathon events dynamically.
