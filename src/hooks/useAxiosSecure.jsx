@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import AuthContext from '../context/AuthContext/AuthContext'
 
 export const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://b10-a11-milescape-server.vercel.app',
   withCredentials: true,
 })
 
@@ -17,10 +17,7 @@ const useAxiosSecure = () => {
         return res
       },
       async error => {
-        console.log(
-          'error caught from our very own axios interceptor-->',
-          error.response
-        )
+        
         if (error.response.status === 401 || error.response.status === 403) {
           // logout
           handleSignOut()

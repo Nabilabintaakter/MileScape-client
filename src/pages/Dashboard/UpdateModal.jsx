@@ -66,9 +66,6 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                     form.reset();
                 }
             })
-            .catch(error => {
-                console.log(error);
-            });
     };
 
     return (

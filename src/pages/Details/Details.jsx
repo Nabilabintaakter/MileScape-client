@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaClock, FaRunning, FaInfoCircl
 import Fade from "react-awesome-reveal";
 import bg from '../../assets/upcoming.jpg';
 import { useEffect } from 'react';
-import CountdownTimer from '../../components/shared/CountdownTimer'; // Import CountdownTimer
+import CountdownTimer from '../../components/shared/CountdownTimer'; 
 
 const Details = () => {
     const marathon = useLoaderData();
@@ -24,7 +24,7 @@ const Details = () => {
     } = marathon;
 
     const isRegistrationOpen = new Date() >= new Date(startRegDate) && new Date() <= new Date(endRegDate);
-
+    console.log(startRegDate);
     return (
         <div className="flex justify-center items-center py-8 md:py-10" style={{
             backgroundImage: `url(${bg})`,

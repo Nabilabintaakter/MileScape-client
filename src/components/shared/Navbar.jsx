@@ -8,6 +8,12 @@ const Navbar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
     const [isScrolled, setIsScrolled] = useState(false);
     const navigate = useNavigate();
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,6 +36,7 @@ const Navbar = () => {
     const links = <>
         <li>
             <NavLink
+                onClick={scrollToTop}
                 to='/'
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
@@ -39,6 +46,7 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
+            onClick={scrollToTop}
                 to='/marathons'
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
@@ -48,6 +56,7 @@ const Navbar = () => {
         </li>
         <li className={`${user ? 'block' : 'hidden'}`}>
             <NavLink
+            onClick={scrollToTop}
                 to='/dashboard/addMarathon'
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''

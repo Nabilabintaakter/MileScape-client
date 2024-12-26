@@ -30,7 +30,6 @@ const MarathonTableRow = ({marathons,setMarathons, marathon, index ,reload,setRe
                 axiosSecure.delete(`/myMarathons/${_id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
-                            console.log(data.data);
                             const remaining = marathons.filter(marathon => marathon._id !== id);
                             setMarathons(remaining);
                         }

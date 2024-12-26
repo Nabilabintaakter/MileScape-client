@@ -16,7 +16,7 @@ const MyMarathonList = () => {
   useEffect(() => {
     axiosSecure.get(`/myMarathons?email=${user.email}`)
       .then(data => {
-        console.log(data.data);
+
         setMarathons(data.data);
         setLoading(false);
       });

@@ -37,7 +37,6 @@ const AddMarathon = () => {
             organizer_email: user?.email,
             totalRegistrations: 0
         };
-        console.log(newMarathon);
 
 
         axiosSecure.post('/marathons', newMarathon)

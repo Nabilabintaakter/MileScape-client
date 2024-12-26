@@ -62,7 +62,6 @@ const Registration = () => {
                 };
             })
             .catch(error => {
-                console.log(error);
                 Swal.fire({
                     title: error.response.data,
                     icon: "error",

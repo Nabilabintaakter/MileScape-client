@@ -22,7 +22,7 @@ const MyApplyList = () => {
       });
     document.title = 'My Apply List | MileScape';
   }, [user?.email, reload,filter,search]);
-console.log(filter);
+
 if (loading) return <LoadingSpinner></LoadingSpinner>
   return (
     <div className='w-full mx-auto mt-2 '>

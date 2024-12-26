@@ -31,7 +31,6 @@ const ApplicationTableRow = ({applies,setApplies, apply, index ,reload,setReload
                 axiosSecure.delete(`/marathon-registrations/${_id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
-                            console.log(data.data);
                             const remaining = applies.filter(apply => apply._id !== id);
                             setApplies(remaining);
                         }
