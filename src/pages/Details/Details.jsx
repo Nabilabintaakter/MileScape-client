@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaClock, FaRunning, FaInfoCircl
 import Fade from "react-awesome-reveal";
 import bg from '../../assets/upcoming.jpg';
 import { useEffect } from 'react';
+import CountdownTimer from '../../components/shared/CountdownTimer'; // Import CountdownTimer
 
 const Details = () => {
     const marathon = useLoaderData();
@@ -32,10 +33,17 @@ const Details = () => {
             backgroundRepeat: "no-repeat",
         }}>
             <Fade triggerOnce>
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[95%] mx-auto md:max-w-6xl transition transform hover:scale-102 hover:shadow-xl duration-300 ease-in-out">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden w-[95%] mx-auto md:max-w-6xl transition transform hover:scale-102 hover:shadow-xl duration-300 ease-in-out ">
                     <div className="md:flex">
-                        <div className="md:w-1/2">
+                        <div className="md:w-1/2 relative">
                             <img src={image} alt={title} className="w-full h-full object-cover" style={{ minHeight: "350px" }} />
+                            {/* Countdown Timer Section */}
+                            <Fade triggerOnce delay={750} direction="up">
+                                <div className="absolute bottom-[1px] left-[1px] text-white p-4 rounded-lg shadow-lg w-full">
+                                    <CountdownTimer marathonStartDate={marathonStartDate} />
+                                </div>
+                            </Fade>
+
                         </div>
                         <div className="md:w-1/2 p-7 bg-yellow-50">
                             <Fade triggerOnce delay={100} direction="down">
@@ -78,11 +86,11 @@ const Details = () => {
                                         </div>
                                     </div>
                                 </Fade>
+
                             </div>
                             <Fade triggerOnce delay={800} direction="down">
                                 <Link to={`/registration/${_id}`}
                                     className={`bg-blue-600 text-white hover:bg-gray-100 hover:text-blue-800 hover:border-2 hover:border-blue-800 font-medium border-2 border-blue-600 btn rounded-lg text-lg w-full md:w-auto transition duration-500 ${isRegistrationOpen ? '' : 'opacity-50 cursor-not-allowed'}`}
-
                                     disabled={!isRegistrationOpen}
                                 >
                                     {isRegistrationOpen ? 'Register Now' : 'Registration Closed'}
