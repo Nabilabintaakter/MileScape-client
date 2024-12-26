@@ -4,10 +4,11 @@ import Header from '../../components/shared/Header';
 import { Fade } from 'react-awesome-reveal';
 import ApplicationTableRow from './ApplicationTableRow';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
 const MyApplyList = () => {
   const axiosSecure = useAxiosSecure();
-  const { user, setLoading } = useContext(AuthContext);
+  const { user,loading, setLoading } = useContext(AuthContext);
   const [applies, setApplies] = useState([]);
   const [reload, setReload] = useState(false);
   const [filter, setFilter] = useState('');
@@ -22,6 +23,7 @@ const MyApplyList = () => {
     document.title = 'My Apply List | MileScape';
   }, [user?.email, reload,filter,search]);
 console.log(filter);
+if (loading) return <LoadingSpinner></LoadingSpinner>
   return (
     <div className='w-full mx-auto mt-2 '>
       <Fade direction="up" triggerOnce duration={2000}>

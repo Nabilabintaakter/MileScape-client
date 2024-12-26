@@ -7,17 +7,18 @@ import Swal from 'sweetalert2';
 import { Fade } from 'react-awesome-reveal';
 import { useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
 const AddMarathon = () => {
     const axiosSecure = useAxiosSecure();
     const [startRegDate, setStartRegDate] = useState(null);
     const [endRegDate, setEndRegDate] = useState(null);
     const [marathonStartDate, setMarathonStartDate] = useState(null);
-    const { user } = useContext(AuthContext)
+    const { user, loading, setLoading } = useContext(AuthContext)
     const navigate = useNavigate();
-        useEffect(() => {
-            document.title = 'Add New Marathon | MileScape';
-        }, [])
+    useEffect(() => {
+        document.title = 'Add New Marathon | MileScape';
+    }, [])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -42,6 +43,7 @@ const AddMarathon = () => {
         axiosSecure.post('/marathons', newMarathon)
             .then(data => {
                 if (data.data.insertedId) {
+                    setLoading(false);
                     Swal.fire({
                         icon: "success",
                         title: "Marathon created successfully!",
@@ -55,7 +57,7 @@ const AddMarathon = () => {
                 };
             })
     };
-
+    if (loading) return <LoadingSpinner></LoadingSpinner>
     return (
         <div className="w-full  mx-auto  mt-2 ">
             <Fade direction="up" triggerOnce duration={2000}>

@@ -16,8 +16,6 @@ const Marathons = () => {
             return (res.data);
         },
     })
-    console.log(data);
-    console.log(isLoading);
     if(isLoading) return <LoadingSpinner></LoadingSpinner>
 
     return (

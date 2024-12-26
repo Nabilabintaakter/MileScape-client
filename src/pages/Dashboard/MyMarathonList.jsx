@@ -4,11 +4,12 @@ import Header from '../../components/shared/Header';
 import { Fade } from 'react-awesome-reveal';
 import MarathonTableRow from './MarathonTableRow';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
 
 const MyMarathonList = () => {
   const axiosSecure = useAxiosSecure();
-  const { user, setLoading } = useContext(AuthContext);
+  const { user, loading, setLoading } = useContext(AuthContext);
   const [marathons, setMarathons] = useState([]);
   const [reload, setReload] = useState(false);
 
@@ -21,7 +22,7 @@ const MyMarathonList = () => {
       });
       document.title = 'My Marathon List | MileScape';
   }, [user?.email, reload]);
-
+  if (loading) return <LoadingSpinner></LoadingSpinner>
   return (
     <div className='w-full mx-auto mt-2'>
       <Fade direction="up" triggerOnce duration={2000}>
