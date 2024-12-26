@@ -1,11 +1,13 @@
-import axios from "axios";
+
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Fade } from "react-awesome-reveal";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
+  const axiosSecure = useAxiosSecure();
   const {
     _id,
     title = "",
@@ -90,8 +92,7 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
         image: formData.image,
       };
 
-      const response = await axios.put(
-        `http://localhost:5000/myMarathons/${_id}`,
+      const response = await axiosSecure.put(`/myMarathons/${_id}`,
         updatedData
       );
 

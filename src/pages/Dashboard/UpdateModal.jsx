@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import { Fade } from 'react-awesome-reveal';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const UpdateModal = ({ onClose, apply, reload, setReload }) => {
+    const axiosSecure = useAxiosSecure();
     const {
         _id,
         marathonTitle,
@@ -48,8 +49,8 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
             additionalInfo: formData.get('additionalInfo'),
         };
 
-        axios
-            .put(`http://localhost:5000/marathon-registrations/${_id}`, updatedData)
+        axiosSecure
+            .put(`/marathon-registrations/${_id}`, updatedData)
             .then((data) => {
                 if (data.data.modifiedCount > 0) {
                     Swal.fire({

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import UpdateModal from './UpdateModal';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const ApplicationTableRow = ({applies,setApplies, apply, index ,reload,setReload}) => {
     const { _id, marathonTitle, marathonStartDate, firstName, lastName,location } = apply || {};
-
+    const axiosSecure = useAxiosSecure();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -28,7 +28,7 @@ const ApplicationTableRow = ({applies,setApplies, apply, index ,reload,setReload
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/marathon-registrations/${_id}`)
+                axiosSecure.delete(`/marathon-registrations/${_id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
                             console.log(data.data);

@@ -3,12 +3,13 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Header from '../../components/shared/Header';
 import AuthContext from '../../context/AuthContext/AuthContext';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Fade } from 'react-awesome-reveal';
 import { useNavigate } from 'react-router-dom';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const AddMarathon = () => {
+    const axiosSecure = useAxiosSecure();
     const [startRegDate, setStartRegDate] = useState(null);
     const [endRegDate, setEndRegDate] = useState(null);
     const [marathonStartDate, setMarathonStartDate] = useState(null);
@@ -38,7 +39,7 @@ const AddMarathon = () => {
         console.log(newMarathon);
 
 
-        axios.post('http://localhost:5000/marathons', newMarathon)
+        axiosSecure.post('/marathons', newMarathon)
             .then(data => {
                 if (data.data.insertedId) {
                     Swal.fire({

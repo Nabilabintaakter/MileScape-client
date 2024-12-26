@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
-import UpdateModal from './UpdateModal';
 import Swal from 'sweetalert2';
-import axios from 'axios';
 import UpdateMarathon from './UpdateMarathon';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const MarathonTableRow = ({marathons,setMarathons, marathon, index ,reload,setReload}) => {
     const { _id, title, marathonStartDate, location, distance } = marathon || {};
-
+    const axiosSecure = useAxiosSecure();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -28,7 +27,7 @@ const MarathonTableRow = ({marathons,setMarathons, marathon, index ,reload,setRe
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/myMarathons/${_id}`)
+                axiosSecure.delete(`/myMarathons/${_id}`)
                     .then(data => {
                         if (data.data.deletedCount > 0) {
                             console.log(data.data);

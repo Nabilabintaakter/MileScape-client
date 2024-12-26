@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import Header from '../../components/shared/Header';
-import axios from 'axios';
 import { Fade } from 'react-awesome-reveal';
 import MarathonTableRow from './MarathonTableRow';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+
 
 const MyMarathonList = () => {
+  const axiosSecure = useAxiosSecure();
   const { user, setLoading } = useContext(AuthContext);
   const [marathons, setMarathons] = useState([]);
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/myMarathons?email=${user.email}`)
+    axiosSecure.get(`/myMarathons?email=${user.email}`)
       .then(data => {
         console.log(data.data);
         setMarathons(data.data);

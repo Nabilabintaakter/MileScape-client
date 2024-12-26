@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Fade } from "react-awesome-reveal";
 import Header from '../../components/shared/Header';
 import MarathonCard from './MarathonCard';
-import axios from 'axios';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const Marathons = () => {
+    const axiosSecure = useAxiosSecure();
     const [marathons, setMarathons] = useState([]);
     const [sort, setSort] = useState('');
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/allMarathons?sort=${sort}`)
+        axiosSecure.get(`/allMarathons?sort=${sort}`)
             .then(data => {
                 setMarathons(data.data);
             })

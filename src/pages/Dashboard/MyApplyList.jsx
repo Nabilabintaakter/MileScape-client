@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import Header from '../../components/shared/Header';
-import axios from 'axios';
 import { Fade } from 'react-awesome-reveal';
 import ApplicationTableRow from './ApplicationTableRow';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const MyApplyList = () => {
+  const axiosSecure = useAxiosSecure();
   const { user, setLoading } = useContext(AuthContext);
   const [applies, setApplies] = useState([]);
   const [reload, setReload] = useState(false);
@@ -13,7 +14,7 @@ const MyApplyList = () => {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/marathon-registrations?email=${user.email}&filter=${filter}&search=${search}`)
+    axiosSecure.get(`/marathon-registrations?email=${user.email}&filter=${filter}&search=${search}`)
       .then(data => {
         setApplies(data.data);
         setLoading(false);

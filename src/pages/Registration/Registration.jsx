@@ -2,10 +2,11 @@ import { useContext, useEffect } from 'react';
 import bg from '../../assets/upcoming.jpg';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
-import axios from 'axios';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const Registration = () => {
+    const axiosSecure = useAxiosSecure();
     const marathon = useLoaderData();
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Registration = () => {
 
         };
 
-        axios.post('http://localhost:5000/marathon-registrations', registrationData)
+        axiosSecure.post('/marathon-registrations', registrationData)
             .then(data => {
                 if (data.data.insertedId) {
                     form.reset();
