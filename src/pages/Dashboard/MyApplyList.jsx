@@ -10,15 +10,16 @@ const MyApplyList = () => {
   const [applies, setApplies] = useState([]);
   const [reload, setReload] = useState(false);
   const [filter, setFilter] = useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/marathon-registrations?email=${user.email}&filter=${filter}`)
+    axios.get(`http://localhost:5000/marathon-registrations?email=${user.email}&filter=${filter}&search=${search}`)
       .then(data => {
         setApplies(data.data);
         setLoading(false);
       });
     document.title = 'My Apply List | MileScape';
-  }, [user?.email, reload,filter]);
+  }, [user?.email, reload,filter,search]);
 console.log(filter);
   return (
     <div className='w-full mx-auto mt-2 '>
@@ -60,9 +61,8 @@ console.log(filter);
               <option value="Tangail"> Tangail</option>
             </select>
           </div>
-
           {/* Search Form */}
-          <form>
+
             <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
               <input
                 className="px-3 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
@@ -70,7 +70,7 @@ console.log(filter);
                 name="search"
                 placeholder="Enter Marathon title"
                 aria-label="Enter Marathon title"
-                value=""
+                onChange={(e)=>setSearch(e.target.value)}
               />
               <button
                 type="submit"
@@ -79,7 +79,7 @@ console.log(filter);
                 Search
               </button>
             </div>
-          </form>
+
         </div>
         {/* Table Section */}
         <Fade triggerOnce delay='20'>
