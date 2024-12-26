@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import UpdateModal from './UpdateModal';
 import Swal from 'sweetalert2';
@@ -15,6 +15,7 @@ const ApplicationTableRow = ({applies,setApplies, apply, index ,reload,setReload
 
     const closeModal = () => {
         setIsModalOpen(false);
+
     };
     const handleDelete = id => {
         Swal.fire({

@@ -47,8 +47,8 @@ const testimonials = [
 
 const Testimonial = () => {
     return (
-        <div className="bg-[#1a1a1a] text-white py-12 lg:py-20 px-8 md:px-16 lg:px-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="bg-[#1a1a1a] text-white py-12 lg:py-20 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-[95%] md:w-[90%] mx-auto max-w-7xl">
                 {/* Left Section */}
                 <Fade direction="left" triggerOnce duration={2000}>
                     <div>

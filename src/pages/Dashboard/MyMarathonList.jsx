@@ -17,6 +17,7 @@ const MyMarathonList = () => {
         setMarathons(data.data);
         setLoading(false);
       });
+      document.title = 'My Marathon List | MileScape';
   }, [user?.email, reload]);
 
   return (

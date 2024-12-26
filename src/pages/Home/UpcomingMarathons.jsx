@@ -3,7 +3,8 @@ import bg from '../../assets/upcoming.jpg';
 import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Header from '../../components/shared/Header';
-import UpcomingCard from './upcomingCard';
+import UpcomingCard from './UpcomingCard';
+
 
 const UpcomingMarathons = () => {
     const [marathons, setMarathons] = useState([]);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Header from '../../components/shared/Header';
 import MarathonCard from './MarathonCard';
@@ -6,6 +6,10 @@ import { Fade } from "react-awesome-reveal";
 
 const Marathons = () => {
     const marathons = useLoaderData();
+    useEffect(() => {
+        document.title = 'Marathons | MileScape';
+    }, [])
+    
     return (
         <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
             <Fade direction="up" triggerOnce duration={2000}>

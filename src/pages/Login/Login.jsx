@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import loginLottieData from '../../assets/lottie/login.json'
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
 
@@ -15,7 +15,11 @@ const Login = () => {
     const location = useLocation();
     const from = location.state || '/';
     const emailRef = useRef();
-    const { handleLogin, setUser, handleGoogleSignIn, setLoading} = useContext(AuthContext);
+    const { handleLogin, setUser, handleGoogleSignIn, setLoading } = useContext(AuthContext);
+
+    useEffect(() => {
+        document.title = 'Login | MileScape';
+    }, [])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -83,7 +87,7 @@ const Login = () => {
                 </div>
                 <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl lg:flex-1 p-6">
                     <form onSubmit={handleSubmit} className="space-y-6 ">
-                    <h1 className="text-4xl font-bold mb-5 flex justify-center">Login now!</h1>
+                        <h1 className="text-4xl font-bold mb-5 flex justify-center">Login now!</h1>
                         <div className="form-control">
                             <label className="block text-lg font-semibold text-gray-800 mb-2">Email Address:</label>
                             <input

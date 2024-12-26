@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import registerLottieData from '../../assets/lottie/register.json'
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
 
@@ -10,6 +10,9 @@ const Register = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const { createUser, handleUpdateProfile,setUser ,setLoading} = useContext(AuthContext);
+        useEffect(() => {
+            document.title = 'Register | MileScape';
+        }, [])
 
     const handleRegister = e => {
         setError('');

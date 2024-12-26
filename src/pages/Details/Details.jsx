@@ -1,10 +1,14 @@
-import { Link, useLoaderData} from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaClock, FaRunning, FaInfoCircle } from 'react-icons/fa';
 import Fade from "react-awesome-reveal";
 import bg from '../../assets/upcoming.jpg';
+import { useEffect } from 'react';
 
 const Details = () => {
     const marathon = useLoaderData();
+    useEffect(() => {
+        document.title = `${marathon.title} | MileScape`;
+    }, [])
     const {
         _id,
         image,

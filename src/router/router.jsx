@@ -13,6 +13,7 @@ import MyMarathonList from "../pages/Dashboard/MyMarathonList";
 import MyApplyList from "../pages/Dashboard/MyApplyList";
 import Details from "../pages/Details/Details";
 import Registration from "../pages/Registration/Registration";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <h2>route not found</h2>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

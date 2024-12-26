@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Header from '../../components/shared/Header';
@@ -14,6 +14,9 @@ const AddMarathon = () => {
     const [marathonStartDate, setMarathonStartDate] = useState(null);
     const { user } = useContext(AuthContext)
     const navigate = useNavigate();
+        useEffect(() => {
+            document.title = 'Add New Marathon | MileScape';
+        }, [])
 
     const handleSubmit = e => {
         e.preventDefault();

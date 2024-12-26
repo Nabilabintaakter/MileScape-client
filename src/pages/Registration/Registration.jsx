@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import bg from '../../assets/upcoming.jpg';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/AuthContext';
@@ -9,7 +9,9 @@ const Registration = () => {
     const marathon = useLoaderData();
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
-
+    useEffect(() => {
+        document.title = 'Registration form | MileScape';
+    }, [])
     const {
         _id,
         title,
@@ -41,7 +43,6 @@ const Registration = () => {
             additionalInfo: formData.get('additionalInfo'),
 
         };
-        console.log(registrationData);
 
         axios.post('http://localhost:5000/marathon-registrations', registrationData)
             .then(data => {
@@ -53,14 +54,19 @@ const Registration = () => {
                         text: "You have been successfully registered for the marathon.",
                         showConfirmButton: false,
                         timer: 2000
-                    });                    
+                    });
                     setTimeout(() => {
                         navigate('/dashboard/myApplyList')
                     }, 3000)
                 };
             })
             .catch(error => {
-                console.error("Error registering for the marathon:", error);
+                console.log(error);
+                Swal.fire({
+                    title: error.response.data,
+                    icon: "error",
+                    draggable: true
+                });
             });
     };
 
