@@ -3,19 +3,22 @@ import { Fade } from "react-awesome-reveal";
 import Header from '../../components/shared/Header';
 import MarathonCard from './MarathonCard';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
 const Marathons = () => {
     const axiosSecure = useAxiosSecure();
-    const [marathons, setMarathons] = useState([]);
     const [sort, setSort] = useState('');
-
-    useEffect(() => {
-        axiosSecure.get(`/allMarathons?sort=${sort}`)
-            .then(data => {
-                setMarathons(data.data);
-            })
-        document.title = 'Marathons | MileScape';
-    }, [sort]);
+    const { data, isLoading } = useQuery({
+        queryKey: ['marathons',sort],
+        queryFn: async () => {
+            const res  = await axiosSecure.get(`/allMarathons?sort=${sort}`)
+            return (res.data);
+        },
+    })
+    console.log(data);
+    console.log(isLoading);
+    if(isLoading) return <LoadingSpinner></LoadingSpinner>
 
     return (
         <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
@@ -42,7 +45,7 @@ const Marathons = () => {
             </div>
             <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
-                    marathons.map((marathon, index) => (
+                    data.map((marathon, index) => (
                         <Fade
                             key={marathon._id}
                             triggerOnce
