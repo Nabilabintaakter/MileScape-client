@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const ApplicationTableRow = ({applies,setApplies, apply, index ,reload,setReload}) => {
-    const { _id, marathonTitle, marathonStartDate, firstName, lastName, email } = apply || {};
+    const { _id, marathonTitle, marathonStartDate, firstName, lastName,location } = apply || {};
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -45,8 +45,8 @@ const ApplicationTableRow = ({applies,setApplies, apply, index ,reload,setReload
             <tr>
                 <td className="py-3.5 px-6 text-sm font-medium text-blue-600">{index + 1}.</td>
                 <td className="py-3.5 px-4 text-sm text-gray-700">{firstName} {lastName}</td>
-                <td className="py-3.5 px-4 text-sm text-gray-700">{email}</td>
                 <td className="py-3.5 px-4 text-sm text-gray-700">{marathonTitle}</td>
+                <td className="py-3.5 px-4 text-sm text-gray-700">{location}</td>
                 <td className="py-3.5 px-4 text-sm text-gray-700">{new Date(marathonStartDate).toLocaleDateString()}</td>
                 <td className="py-3.5 px-4 text-sm text-gray-700 flex items-center justify-start gap-4">
                     <button

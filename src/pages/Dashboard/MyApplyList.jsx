@@ -9,17 +9,17 @@ const MyApplyList = () => {
   const { user, setLoading } = useContext(AuthContext);
   const [applies, setApplies] = useState([]);
   const [reload, setReload] = useState(false);
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/marathon-registrations?email=${user.email}`)
+    axios.get(`http://localhost:5000/marathon-registrations?email=${user.email}&filter=${filter}`)
       .then(data => {
-        console.log(data.data);
         setApplies(data.data);
         setLoading(false);
       });
     document.title = 'My Apply List | MileScape';
-  }, [user?.email, reload]);
-
+  }, [user?.email, reload,filter]);
+console.log(filter);
   return (
     <div className='w-full mx-auto mt-2 '>
       <Fade direction="up" triggerOnce duration={2000}>
@@ -40,23 +40,24 @@ const MyApplyList = () => {
               name="location"
               id="location"
               className="border p-4 rounded-lg"
+              onChange={(e)=>setFilter(e.target.value)}
             >
               <option value="">Filter By Location</option>
-              <option value="Engineering">Dhaka</option>
-              <option value="Marketing">Chattogram</option>
-              <option value="Finance">Sylhet</option>
-              <option value="Teaching"> Rajshahi</option>
-              <option value="Management">Khulna</option>
-              <option value="Development">Narsingdi</option>
-              <option value="Data Science">Barishal</option>
-              <option value="Design">Cox's Bazar</option>
-              <option value="Development">Comilla</option>
-              <option value="Development">Gazipur</option>
-              <option value="Development">Rangpur</option>
-              <option value="Development">Jessore</option>
-              <option value="Development">Mymensingh</option>
-              <option value="Development">Pabna</option>             
-              <option value="Development"> Tangail</option>
+              <option value="Dhaka">Dhaka</option>
+              <option value="Chattogram">Chattogram</option>
+              <option value="Sylhet">Sylhet</option>
+              <option value="Rajshahi"> Rajshahi</option>
+              <option value="Khulna">Khulna</option>
+              <option value="Narsingdi">Narsingdi</option>
+              <option value="Barishal">Barishal</option>
+              <option value="Cox's Bazar">Cox's Bazar</option>
+              <option value="Comilla">Comilla</option>
+              <option value="Gazipur">Gazipur</option>
+              <option value="Rangpur">Rangpur</option>
+              <option value="Jessore">Jessore</option>
+              <option value="Mymensingh">Mymensingh</option>
+              <option value="Pabna">Pabna</option>             
+              <option value="Tangail"> Tangail</option>
             </select>
           </div>
 
@@ -105,13 +106,13 @@ const MyApplyList = () => {
                           scope='col'
                           className='py-3.5 px-4 text-sm font-semibold text-left text-gray-700'
                         >
-                          Email
+                          Marathon Title
                         </th>
                         <th
                           scope='col'
                           className='py-3.5 px-4 text-sm font-semibold text-left text-gray-700'
                         >
-                          Marathon Title
+                          Location
                         </th>
                         <th
                           scope='col'
