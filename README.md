@@ -1,11 +1,11 @@
 # Milescape - Marathon Management System
 
-The **Milescape** is a full-stack web application designed to simplify the organization of marathon events. It connects event organizers with participants, enabling users to create, manage, and apply for marathon events seamlessly.
+The **Milescape** is a Marathon Management System that allows event organizers to create and manage marathon events. Users can sign up for marathons, track their applications, and manage their participation through a personalized dashboard. The project is built with React on the frontend and Node.js on the backend, with MongoDB for data storage and Firebase for authentication.
 
 ## 🌐 **Live Website**
 [Visit the Live Site](https://coffee-store-5b114.web.app/)
 
-## ✨ **Features**
+## ✨ **Key Features**
 1. **Dynamic User Experience**: Users can create, update, and delete marathon events dynamically.
 2. **Participant Management**: Logged-in users can apply for marathons, manage their registrations, and track their activities via a personal dashboard.
 3. **Responsive Design**: Optimized for mobile, tablet, and desktop views to ensure accessibility on all devices.
@@ -28,13 +28,71 @@ The **Milescape** is a full-stack web application designed to simplify the organ
 - **404 Page**: Custom "Not Found" page for invalid routes.
 
 ## 🚀 **Technologies Used**
-### Client-Side
-- **React**: Component-based front-end library.
-- **Tailwind CSS**: For responsive and modern UI design.
-- **DaisyUI**: Tailwind CSS component library.
-- **React Router**: Dynamic routing for navigation.
-- **React Toastify**: Notifications for success and error messages.
-- **React Datepicker**: For selecting dates in forms.
+
+- **Frontend**: React, React Router, Tailwind CSS, DaisyUI, React Query, React Datepicker, SweetAlert2, Lottie React, Swiper
+- **Backend**: Node.js, Express.js, MongoDB, JWT Authentication, Firebase Authentication
+- **Deployment**: Vercel, Firebase Hosting, MongoDB Atlas
+- **Other Libraries**: React Countdown Circle Timer, Localforage
+
+
+## Client Setup
+
+To get the frontend of the application running, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Nabilabintaakter/B10A11-MileScape-client.git
+    cd B10A11-MileScape-client
+    ```
+
+2. Install the required dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Start the development server:
+    ```bash
+    npm start
+    ```
+
+4. Open your browser and go to `http://localhost:5173`.
+
+## Backend Setup
+
+To set up the backend, follow these steps:
+
+1. Clone the backend repository:
+    ```bash
+    git clone https://github.com/Nabilabintaakter/B10A11-MileScape-server.git
+    cd B10A11-MileScape-server
+    ```
+
+2. Install the required dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Set up environment variables for Firebase and MongoDB credentials.
+
+4. Start the server:
+    ```bash
+    npm run dev
+    ```
+
+5. The backend will be accessible at `http://localhost:5000`.
+
+## Running the Application
+
+**Backend Repository:** [Milescape Server](https://github.com/Nabilabintaakter/B10A11-MileScape-server)  
+**Live API:** [Milescape API](https://b10-a11-milescape-server.vercel.app/)
+
+1. Ensure both the frontend and backend are running.
+2. Access the client-side application by navigating to the live website or your local development server.
+3. Use the provided features like user registration, marathon creation, and event registration.
+
+
+
+
 
 
 
