@@ -27,6 +27,15 @@ The **Milescape** is a Marathon Management System that allows event organizers t
 - **Login and Register Pages**: Secure authentication system with password validation.
 - **404 Page**: Custom "Not Found" page for invalid routes.
 
+## 🖼️ Screenshots
+
+### Home Page:
+<img src="https://i.ibb.co.com/ThnFSjL/mile.jpg" alt="Home Page Screenshot" width="100%" />
+
+### Marathons Page:
+<img src="https://i.ibb.co.com/4d5X9NN/mile-2.jpg" alt="Marathons Page Screenshot" width="100%" />
+
+
 ## 🚀 **Technologies Used**
 
 - **Frontend**: React, React Router, Tailwind CSS, DaisyUI, React Query, React Datepicker, SweetAlert2, Lottie React, Swiper
