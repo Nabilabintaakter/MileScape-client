@@ -35,7 +35,7 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10">
+        <div className="w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10 lg:mb-16">
             <div className="w-full max-w-4xl mx-auto text-center">
 
                 <Fade direction="up" triggerOnce duration={2000}>

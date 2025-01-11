@@ -4,6 +4,7 @@ import SixMarathons from './SixMarathons';
 import FeaturesSection from './FeaturesSection';
 import UpcomingMarathons from './UpcomingMarathons';
 import Testimonial from './Testimonial';
+import FAQ from '../FAQ/FAQ';
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
             <SixMarathons></SixMarathons>
             <UpcomingMarathons></UpcomingMarathons>
             <Testimonial></Testimonial>
+            <FAQ></FAQ>
         </div>
     );
 };
