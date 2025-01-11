@@ -126,7 +126,6 @@ const MyMarathonList = () => {
             </Bounce>
           )
         }
-
       </section>
     </div>
   );
