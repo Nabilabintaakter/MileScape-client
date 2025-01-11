@@ -111,7 +111,7 @@ const MyMarathonList = () => {
             <Bounce triggerOnce>
               <div className='flex flex-col items-center justify-center mt-10'>
                 <FaRunning className='text-6xl text-blue-500 mb-4' />
-                <p className='text-xl font-semibold text-gray-700'>
+                <p className='text-xl italic font-semibold text-gray-700'>
                   No marathons added yet!
                 </p>
                 <p className='text-gray-500 mt-2'>

@@ -14,6 +14,7 @@ import MyApplyList from "../pages/Dashboard/MyApplyList";
 import Details from "../pages/Details/Details";
 import Registration from "../pages/Registration/Registration";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/marathons",
-        element: <PrivateRoute><Marathons></Marathons></PrivateRoute>,
+        element: <Marathons></Marathons>,
       },
       {
         path: "/login",
@@ -40,8 +41,12 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
+      },
+      {
         path: "/marathons/:id",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        element: <Details></Details>,
         loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
       },
       {

@@ -86,9 +86,6 @@ const UpcomingCard = ({ marathon }) => {
                     <p className=" text-gray-400">
                         Participants: {totalRegistrations || "0"}
                     </p>
-                    <button className="mt-4 flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-md text-sm hover:bg-yellow-500">
-                        Register Now <FaArrowRight></FaArrowRight>
-                    </button>
                 </div>
             </div>
         </div>

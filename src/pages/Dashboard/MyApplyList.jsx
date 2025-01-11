@@ -161,7 +161,7 @@ const MyApplyList = () => {
                 <div className="text-6xl text-red-500 mb-4">
                   <MdOutlineRunningWithErrors />
                 </div>
-                <h2 className="text-2xl font-semibold text-red-500 mb-2">
+                <h2 className="text-2xl italic font-semibold text-red-500 mb-2">
                   No Applications Found
                 </h2>
                 <p className="text-gray-500 text-center max-w-md">

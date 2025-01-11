@@ -35,7 +35,7 @@ const FeaturesSection = () => {
             key={index}
             direction="up"
             duration={1500}
-            delay={isMobile ? index * 500 : index * 400} // Staggered entry for mobile
+            delay={isMobile ? index * 450 : index * 400}
             triggerOnce
           >
             <div className="bg-[#202020] p-6 rounded-lg shadow-lg flex">

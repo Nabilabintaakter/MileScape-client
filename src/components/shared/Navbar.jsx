@@ -64,6 +64,16 @@ const Navbar = () => {
                 DASHBOARD
             </NavLink>
         </li>
+        <li>
+            <NavLink
+            onClick={scrollToTop}
+                to='/aboutUs'
+                className={({ isActive }) =>
+                    isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
+                }>
+                ABOUT US
+            </NavLink>
+        </li>
     </>;
 
     return (
