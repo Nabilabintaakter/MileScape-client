@@ -32,7 +32,7 @@ const Marathons = () => {
                     <select
                         name="sort"
                         id="sort"
-                        className="btn btn-md border rounded-md bg-gradient-to-br from-pink-300 to-purple-300"
+                        className="btn btn-sm md:btn-md border rounded-md bg-gradient-to-br from-pink-200 to-purple-200 mt-5 md:mt-0"
                         onChange={(e) => setSort(e.target.value)}
                     >
                         <option value="">Sort By Created At</option>

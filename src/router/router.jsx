@@ -15,6 +15,8 @@ import Details from "../pages/Details/Details";
 import Registration from "../pages/Registration/Registration";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import WhyChooseUs from "../pages/WhyChooseUs/WhyChooseUs";
+import FAQ from "../pages/FAQ/FAQ";
 
 
 
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/whyChooseUs",
+        element: <WhyChooseUs></WhyChooseUs>,
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
       },
       {
         path: "/marathons/:id",

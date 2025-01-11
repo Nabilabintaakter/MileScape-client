@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import footer from '../../assets/footer.jpg';
 import logo from '../../assets/logoo.png';
 import { MdEmail, MdPhone } from "react-icons/md";
@@ -16,7 +17,7 @@ const Footer = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/80"></div>
 
-      <div className="w-full mx-auto max-w-7xl px-6 py-10 relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="w-full mx-auto lg:max-w-7xl px-6 py-10 relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* About Section */}
         <div>
           <div className="flex items-center gap-3">
@@ -34,59 +35,32 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Our Services */}
-        <div className="flex sm:justify-center">
-          <div>
-            <h3 className="text-lg md:text-xl font-bold">Our Services</h3>
-            <ul className="mt-4 space-y-2 text-sm md:text-base">
-              <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Upcoming Marathons
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Event Management
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Membership Plans
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Marathon Coaching
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+
 
         {/* Support */}
         <div className="md:flex md:justify-center">
           <div>
-            <h3 className="text-lg md:text-xl font-bold">Support</h3>
+            <h3 className="text-lg md:text-xl font-bold">Our Services</h3>
             <ul className="mt-4 space-y-2 text-sm md:text-base">
-              <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Help Center
-                </a>
+            <li>
+                <Link to={'/marathons'} className="hover:text-yellow-300">
+                  Upcoming Marathons
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-yellow-300">
+                <Link to={'/faq'} className="hover:text-yellow-300">
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Contact Us
-                </a>
+                <Link to={'/aboutUs'} className="hover:text-yellow-300">
+                  About Us
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-yellow-300">
-                  News & Articles
-                </a>
+                <Link to={'/whyChooseUs'} className="hover:text-yellow-300">
+                  Why Choose Us
+                </Link>
               </li>
             </ul>
           </div>

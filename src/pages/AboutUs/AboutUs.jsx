@@ -9,7 +9,7 @@ const AboutUs = () => {
             <div className="w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10">
                 <Fade direction="up" triggerOnce duration={2000}>
                     <div className='mt-3 mb-5 md:mt-5 md:mb-8'>
-                        <Header title='Your Ultimate 2025 Marathon Guide!' subTitle='Find your perfect challenge'></Header>
+                        <Header title='Who we are' subTitle='About Us'></Header>
                     </div>
                 </Fade>
                 <Fade triggerOnce direction="up">
