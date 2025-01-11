@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 setUser(currentUser)
                 const { data } = await axios.post(
-                    `https://b10-a11-milescape-server.vercel.app/jwt`,
+                    `http://localhost:5000/jwt`,
                     {
                         email: currentUser?.email,
                     },
@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
             } else {
                 setUser(currentUser)
                 const { data } = await axios.get(
-                    `https://b10-a11-milescape-server.vercel.app/logout`,
+                    `http://localhost:5000/logout`,
                     { withCredentials: true }
                 )
             }

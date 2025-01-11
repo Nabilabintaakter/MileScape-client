@@ -57,7 +57,7 @@ const Banner = () => {
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={slide.id}>
-                        <div className="relative h-[400px] lg:h-[550px] flex items-center overflow-hidden">
+                        <div className="relative h-[400px] lg:h-[450px] flex items-center overflow-hidden">
                             {/* Background Image with Zoom-in Effect */}
                             <div
                                 className={`absolute inset-0 transform transition-transform duration-[6000ms] ease-out ${
