@@ -73,7 +73,7 @@ const Banner = () => {
                             <div className="flex justify-start flex-col w-[90%] mx-auto max-w-7xl relative z-10 text-white">
                                 <div className="max-w-4xl">
                                     <Fade triggerOnce duration={1000} direction="left" delay={0}>
-                                        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 w-full md:w-[70%]">
+                                        <h1 className="text-4xl md:text-[52px] font-bold leading-tight mb-4 w-full md:w-[70%]">
                                             Empower Marathon Enthusiasts
                                         </h1>
                                     </Fade>

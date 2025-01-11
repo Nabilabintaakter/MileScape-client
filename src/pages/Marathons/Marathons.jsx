@@ -32,7 +32,7 @@ const Marathons = () => {
                     <select
                         name="sort"
                         id="sort"
-                        className=" border p-2 md:p-4 rounded-md bg-gradient-to-br from-pink-400 to-purple-400"
+                        className="btn btn-md border rounded-md bg-gradient-to-br from-pink-300 to-purple-300"
                         onChange={(e) => setSort(e.target.value)}
                     >
                         <option value="">Sort By Created At</option>
@@ -41,7 +41,7 @@ const Marathons = () => {
                     </select>
                 </div>
             </div>
-            <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
                 {
                     data.map((marathon, index) => (
                         <Fade

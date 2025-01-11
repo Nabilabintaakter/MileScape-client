@@ -53,7 +53,7 @@ const Dashboard = () => {
                     </NavLink>
                 </div>
                 <div className="md:col-span-4 p-3 rounded-md">
-                    <div className="h-full">
+                    <div className="min-h-screen">
                         <Outlet />
                     </div>
                 </div>

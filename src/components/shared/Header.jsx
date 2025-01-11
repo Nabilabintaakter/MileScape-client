@@ -7,7 +7,7 @@ const Header = ({title, subTitle}) => {
             <h3 className="font-semibold text-gray-600 uppercase">
                 {title}
             </h3>
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mt-2 md:mt-4">
+            <h1 className="text-3xl md:text-[42px] font-bold text-gray-900 mt-2 md:mt-4">
                 {subTitle}
             </h1>
             {/* Underline */}
