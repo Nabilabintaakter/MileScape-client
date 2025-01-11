@@ -10,7 +10,7 @@ const UpcomingMarathons = () => {
     const [marathons, setMarathons] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/upcomingMarathons')
+        axios.get('https://b10-a11-milescape-server.vercel.app/upcomingMarathons')
             .then(data => {
                 setMarathons(data.data);
             });

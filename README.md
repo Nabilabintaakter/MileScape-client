@@ -93,7 +93,7 @@ To set up the backend, follow these steps:
 ## Running the Application
 
 **Backend Repository:** [Milescape Server](https://github.com/Nabilabintaakter/B10A11-MileScape-server)  
-**Live API:** [Milescape API](http://localhost:5000/)
+**Live API:** [Milescape API](https://b10-a11-milescape-server.vercel.app/axios)
 
 1. Ensure both the frontend and backend are running.
 2. Access the client-side application by navigating to the live website or your local development server.

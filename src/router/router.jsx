@@ -57,12 +57,12 @@ const router = createBrowserRouter([
       {
         path: "/marathons/:id",
         element: <Details></Details>,
-        loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
+        loader: ({params})=> fetch(`https://b10-a11-milescape-server.vercel.app/marathons/${params.id}`)
       },
       {
         path: "/registration/:id",
         element: <PrivateRoute><Registration></Registration></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/marathons/${params.id}`)
+        loader: ({params})=> fetch(`https://b10-a11-milescape-server.vercel.app/marathons/${params.id}`)
       },
       {
         path: "/dashboard",

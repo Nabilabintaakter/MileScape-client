@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import AuthContext from '../context/AuthContext/AuthContext'
 
 export const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: 'https://b10-a11-milescape-server.vercel.app',
   withCredentials: true,
 })
 
