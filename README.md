@@ -1,5 +1,6 @@
 # Milescape - Marathon Management System
 
+<img src="https://i.ibb.co.com/1Yq6rcNt/Screenshot-11.jpg" alt="Home Page Screenshot" width="100%" />
 The **Milescape** is a Marathon Management System that allows event organizers to create and manage marathon events. Users can sign up for marathons, track their applications, and manage their participation through a personalized dashboard. The project is built with React on the frontend and Node.js on the backend, with MongoDB for data storage and Firebase for authentication.
 
 ## 🌐 **Live Website**
@@ -26,14 +27,6 @@ The **Milescape** is a Marathon Management System that allows event organizers t
 - **Marathon Details Page**: Detailed marathon information with registration capabilities.
 - **Login and Register Pages**: Secure authentication system with password validation.
 - **404 Page**: Custom "Not Found" page for invalid routes.
-
-## 🖼️ Screenshots
-
-### Home Page:
-<img src="https://i.ibb.co.com/ThnFSjL/mile.jpg" alt="Home Page Screenshot" width="100%" />
-
-### Marathons Page:
-<img src="https://i.ibb.co.com/4d5X9NN/mile-2.jpg" alt="Marathons Page Screenshot" width="100%" />
 
 
 ## 🚀 **Technologies Used**
