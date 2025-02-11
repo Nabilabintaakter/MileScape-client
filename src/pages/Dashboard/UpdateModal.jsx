@@ -26,11 +26,11 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
     useEffect(() => {
         // Add 'modal-open' class to the body when modal is open
         document.body.classList.add('modal-open');
-        document.title = 'Update your Registration | MileScape';
+        document.title = 'Update your Registration | Milescape';
         return () => {
             // Remove 'modal-open' class when modal is closed
             document.body.classList.remove('modal-open');
-            document.title = 'My Apply List | MileScape';
+            document.title = 'My Apply List | Milescape';
         };
     }, []);
 

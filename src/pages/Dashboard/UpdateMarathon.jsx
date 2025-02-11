@@ -33,11 +33,11 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
   useEffect(() => {
     // Add 'modal-open' class to the body when modal is open
     document.body.classList.add('modal-open');
-    document.title = 'Update your Marathon | MileScape';
+    document.title = 'Update your Marathon | Milescape';
     return () => {
       // Remove 'modal-open' class when modal is closed
       document.body.classList.remove('modal-open');
-      document.title = 'My Marathon List | MileScape';
+      document.title = 'My Marathon List | Milescape';
     };
   }, []);
 

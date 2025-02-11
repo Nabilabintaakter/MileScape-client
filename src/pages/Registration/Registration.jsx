@@ -11,7 +11,7 @@ const Registration = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     useEffect(() => {
-        document.title = 'Registration form | MileScape';
+        document.title = 'Registration form |Milescape';
     }, [])
     const {
         _id,

@@ -22,7 +22,7 @@ const MyMarathonList = () => {
         setMarathons(data.data);
         setLoading(false);
       });
-    document.title = 'My Marathon List | MileScape';
+    document.title = 'My Marathon List | Milescape';
   }, [user?.email, reload]);
   if (loading) return <LoadingSpinner></LoadingSpinner>
   return (

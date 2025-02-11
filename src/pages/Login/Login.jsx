@@ -18,7 +18,7 @@ const Login = () => {
     const { handleLogin, setUser, handleGoogleSignIn, setLoading } = useContext(AuthContext);
 
     useEffect(() => {
-        document.title = 'Login | MileScape';
+        document.title = 'Login |Milescape';
     }, [])
 
     const handleSubmit = e => {

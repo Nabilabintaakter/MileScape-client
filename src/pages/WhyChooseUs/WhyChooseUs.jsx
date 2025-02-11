@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 
 const WhyChooseUs = () => {
+    useEffect(() => {
+        document.title = `Why Choose Us | Milescape`;
+    }, [])
     return (
         <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
             <Fade direction="up" triggerOnce duration={2000}>

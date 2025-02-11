@@ -17,7 +17,7 @@ const AddMarathon = () => {
     const { user, loading, setLoading } = useContext(AuthContext)
     const navigate = useNavigate();
     useEffect(() => {
-        document.title = 'Add New Marathon | MileScape';
+        document.title = 'Add New Marathon | Milescape';
     }, [])
 
     const handleSubmit = e => {

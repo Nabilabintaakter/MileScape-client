@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from "react-accessible-accordion";
 import { Fade, Slide } from "react-awesome-reveal";
@@ -6,6 +6,9 @@ import "react-accessible-accordion/dist/fancy-example.css"; // Accordion styling
 import Header from "../../components/shared/Header";
 
 const FAQ = () => {
+    useEffect(() => {
+        document.title = `Frequently Asked Questions | Milescape`;
+    }, [])
     const faqs = [
         {
             question: "What is Milescape?",

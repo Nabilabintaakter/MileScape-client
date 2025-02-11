@@ -9,7 +9,7 @@ import FAQ from '../FAQ/FAQ';
 const Home = () => {
 
     useEffect(() => {
-        document.title = 'Home | MileScape';
+        document.title = 'Home | Milescape';
     }, [])
     return (
         <div className='w-full'>

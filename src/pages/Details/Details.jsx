@@ -8,7 +8,7 @@ import CountdownTimer from '../../components/shared/CountdownTimer';
 const Details = () => {
     const marathon = useLoaderData();
     useEffect(() => {
-        document.title = `${marathon.title} | MileScape`;
+        document.title = `${marathon.title} | Milescape`;
     }, [])
     const {
         _id,

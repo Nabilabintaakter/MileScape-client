@@ -22,7 +22,7 @@ const MyApplyList = () => {
         setApplies(data.data);
         setLoading(false);
       });
-    document.title = 'My Apply List | MileScape';
+    document.title = 'My Apply List | Milescape';
   }, [user?.email, reload, filter, search]);
 
   if (loading) return <LoadingSpinner></LoadingSpinner>

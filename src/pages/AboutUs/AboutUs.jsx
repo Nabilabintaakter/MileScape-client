@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaRunning, FaUsers, FaChartLine } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal"; // Removed Slide for immediate appearance
 import Header from "../../components/shared/Header";
 
 const AboutUs = () => {
+    useEffect(() => {
+        document.title = `About Us | Milescape`;
+    }, [])
     return (
         <div className="bg-gray-100 text-gray-800 px-8 pb-8 md:px-16 md:pb-16 pt-6">
             <div className="w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10">

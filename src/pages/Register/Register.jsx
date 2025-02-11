@@ -11,7 +11,7 @@ const Register = () => {
     const navigate = useNavigate();
     const { createUser, handleUpdateProfile,setUser ,setLoading} = useContext(AuthContext);
         useEffect(() => {
-            document.title = 'Register | MileScape';
+            document.title = 'Register |Milescape';
         }, [])
 
     const handleRegister = e => {
