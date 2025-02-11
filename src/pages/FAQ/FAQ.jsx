@@ -80,40 +80,42 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="w-[90%] mx-auto max-w-7xl mb-16">
+        <div className="w-[90%]  mx-auto max-w-7xl mb-16 ">
             <div className="w-full max-w-4xl mx-auto text-center">
-                <Fade direction="up" triggerOnce duration={2000}>
+                <Fade direction="up" triggerOnce duration={1000}>
                     <div className='mt-3 mb-5 md:mt-5 md:mb-10 lg:mb-14'>
                         <Header title='Learn More!' subTitle='Frequently Asked Questions' />
                     </div>
                 </Fade>
             </div>
 
-            <Fade direction="up" cascade triggerOnce>
-                <Accordion allowZeroExpanded className="bg-gradient-to-r from-blue-50 to-blue-100 shadow-2xl rounded-lg overflow-hidden">
-                    {faqs.map((faq, index) => (
-                        <AccordionItem key={index} className="border-b border-blue-200 rounded-lg">
-                            <AccordionItemHeading>
-                                <AccordionItemButton
-                                    className="text-lg font-semibold flex justify-between items-center p-5 bg-white hover:bg-blue-100 transition-all duration-300 cursor-pointer rounded-lg shadow-md"
-                                    onClick={() => toggleAccordion(index)}
-                                >
-                                    <span className="text-blue-900">{index + 1}. {faq.question}</span>
-                                    <FaChevronDown
-                                        className={`text-blue-900 ${activeIndex === index ? "rotate-180" : ""}`}
-                                    />
-                                </AccordionItemButton>
-                            </AccordionItemHeading>
-                            <Fade direction="up" triggerOnce>
-                                <AccordionItemPanel
-                                    className="text-gray-700 p-4 transition-all duration-300 bg-blue-50 border-l-4 border-blue-400 rounded-lg"
-                                >
-                                    <p className="leading-relaxed">{faq.answer}</p>
-                                </AccordionItemPanel>
-                            </Fade>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+            <Fade direction="up" cascade triggerOnce >
+                <div className="bg-gradient-to-r from-blue-50 to-blue-100 shadow-2xl rounded-lg">
+                    <Accordion allowZeroExpanded className="w-full p-5 lg:p-8 mx-auto overflow-hidden">
+                        {faqs.map((faq, index) => (
+                            <AccordionItem key={index} className="border-b border-blue-200 rounded-lg mb-2">
+                                <AccordionItemHeading>
+                                    <AccordionItemButton
+                                        className="text-lg font-semibold flex border-[1px] border-white justify-between items-center p-5 bg-white hover:bg-blue-100 hover:border-blue-600 transition-all duration-300 cursor-pointer rounded-lg shadow-md"
+                                        onClick={() => toggleAccordion(index)}
+                                    >
+                                        <span className="text-blue-900">{index + 1}. {faq.question}</span>
+                                        <FaChevronDown
+                                            className={`text-blue-900 ${activeIndex === index ? "rotate-180" : ""}`}
+                                        />
+                                    </AccordionItemButton>
+                                </AccordionItemHeading>
+                                <Fade direction="up" triggerOnce>
+                                    <AccordionItemPanel
+                                        className="text-gray-700 p-4 transition-all duration-300 bg-blue-50 border-l-4 border-blue-400 rounded-lg"
+                                    >
+                                        <p className="leading-relaxed">{faq.answer}</p>
+                                    </AccordionItemPanel>
+                                </Fade>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
             </Fade>
         </div>
     );

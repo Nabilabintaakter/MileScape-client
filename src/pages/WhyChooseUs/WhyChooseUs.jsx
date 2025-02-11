@@ -1,62 +1,76 @@
-import React, { useEffect } from 'react';
-import { Fade } from 'react-awesome-reveal';
+import React, { useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
+import { FaClipboardList, FaRunning, FaUsers, FaChartLine, FaRegCheckCircle, FaRegEdit } from "react-icons/fa";
+import Header from "../../components/shared/Header";
+import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {
     useEffect(() => {
-        document.title = `Why Choose Us | Milescape`;
-    }, [])
-    return (
-        <div className='w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
-            <Fade direction="up" triggerOnce duration={2000}>
-                <div className=" text-center bg-gradient-to-r from-blue-100 to-blue-200 pt-5 pb-12 px-6 rounded shadow-lg">
-                    <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-6">Why Choose Milescape?</h2>
-                    <p className="text-lg text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-                        Milescape is more than just a marathon platform—it's a movement designed to bring people together through fitness and wellness. Whether you're a runner looking to track your progress or an event organizer managing marathons, we offer a range of tools and resources that elevate your marathon experience.
-                        <br />
-                        <span className="font-semibold text-xl mt-6">Here’s why you should choose Milescape:</span>
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        <ul className="text-left space-y-6">
-                            <li className="flex items-start space-x-3">
-                                <span className="text-2xl text-blue-600">✔️</span>
-                                <p className="text-lg font-medium text-gray-800">
-                                    <span className="font-semibold">Seamless Event Management:</span> Organizers can easily set up, track, and manage marathon events.
-                                </p>
-                            </li>
-                            <li className="flex items-start space-x-3">
-                                <span className="text-2xl text-blue-600">✔️</span>
-                                <p className="text-lg font-medium text-gray-800">
-                                    <span className="font-semibold">Wide Selection of Events:</span> Discover a variety of marathon events, from casual runs to elite competitions.
-                                </p>
-                            </li>
-                        </ul>
+        document.title = "Why Choose Us | Milescape";
+    }, []);
 
-                        <ul className="text-left space-y-6">
-                            <li className="flex items-start space-x-3">
-                                <span className="text-2xl text-blue-600">✔️</span>
-                                <p className="text-lg font-medium text-gray-800">
-                                    <span className="font-semibold">Real-time Tracking:</span> Track your progress in real-time with personalized dashboards.
-                                </p>
-                            </li>
-                            <li className="flex items-start space-x-3">
-                                <span className="text-2xl text-blue-600">✔️</span>
-                                <p className="text-lg font-medium text-gray-800">
-                                    <span className="font-semibold">Community Engagement:</span> Join a growing network of passionate runners and wellness advocates.
-                                </p>
-                            </li>
-                            <li className="flex items-start space-x-3">
-                                <span className="text-2xl text-blue-600">✔️</span>
-                                <p className="text-lg font-medium text-gray-800">
-                                    <span className="font-semibold">Post-Event Analysis:</span> Get detailed insights into your performance, including comparisons with past results.
-                                </p>
-                            </li>
-                        </ul>
+    return (
+        <div className="w-full bg-[#fae10215] pb-10">
+            <div className="pt-4 pb-8 px-8 text-center w-[90%] mx-auto max-w-7xl">
+                <Fade direction="up" triggerOnce duration={1000}>
+                    <div className='mt-3 mb-5 md:mt-5 md:mb-10'>
+                        <Header title='Our Story!' subTitle='Why Choose Us' />
                     </div>
-                    <p className="text-lg mt-8 text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                        Whether you're a first-time marathoner or a seasoned runner, Milescape is your partner in achieving your fitness goals and making your marathon experience unforgettable. Join us today!
-                    </p>
+                </Fade>
+
+                {/* Features Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                    {[
+                        {
+                            title: "Effortless Event Management",
+                            description: "Easily create, manage, and track marathons with our intuitive tools.",
+                            icon: <FaClipboardList className="text-blue-600 text-2xl" />
+                        },
+                        {
+                            title: "Real-Time Performance Tracking",
+                            description: "Monitor your stats, progress, and milestones with precision.",
+                            icon: <FaRunning className="text-blue-600 text-2xl" />
+                        },
+                        {
+                            title: "Diverse Marathon Selection",
+                            description: "From fun runs to elite races, find the perfect event for you.",
+                            icon: <FaUsers className="text-blue-600 text-2xl" />
+                        },
+                        {
+                            title: "Community & Networking",
+                            description: "Connect with like-minded runners, trainers, and event organizers.",
+                            icon: <FaUsers className="text-blue-600 text-2xl" />
+                        },
+                        {
+                            title: "Smart Analytics & Insights",
+                            description: "Get detailed post-race reports to analyze and improve your performance.",
+                            icon: <FaChartLine className="text-blue-600 text-2xl" />
+                        },
+                        {
+                            title: "Seamless Registration Process",
+                            description: "Sign up and participate in events effortlessly, without any hassle.",
+                            icon: <FaRegEdit className="text-blue-600 text-2xl" />
+                        }
+                    ].map((feature, index) => (
+                        <Fade key={index} triggerOnce delay={index * 200}>
+                            <div className="bg-white p-6 rounded shadow-md hover:shadow-xl border-[1px] border-white hover:border-blue-800 transition-all duration-700 flex flex-col h-full hover:scale-105">
+                                <div className="flex items-center space-x-3">
+                                    {feature.icon}
+                                    <h3 className="text-xl font-semibold text-blue-900">{feature.title}</h3>
+                                </div>
+                                <p className="text-gray-700 mt-3 flex-grow">{feature.description}</p>
+                            </div>
+                        </Fade>
+                    ))}
                 </div>
-            </Fade>
+
+                {/* Call to Action */}
+                <p className="text-lg mt-10 text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                    Join <Link to="/marathons" className="text-blue-700 font-semibold hover:underline">
+                        Milescape
+                    </Link> today and take your marathon experience to the next level!
+                </p>
+            </div>
         </div>
     );
 };
