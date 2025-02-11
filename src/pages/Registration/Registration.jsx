@@ -82,7 +82,7 @@ const Registration = () => {
         >
             <form
                 onSubmit={handleRegistration}
-                className="w-[95%] mx-auto md:max-w-4xl bg-white shadow-lg p-8 rounded-md"
+                className="w-[90%] mx-auto md:max-w-4xl bg-white shadow-lg p-8 rounded-md"
             >
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
                     COMPLETE YOUR RACE <span className="text-yellow-500">REGISTRATION FORM</span>

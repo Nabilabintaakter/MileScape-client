@@ -48,16 +48,16 @@ const testimonials = [
 const Testimonial = () => {
     return (
         <div className="bg-[#1a1a1a] text-white py-12 lg:py-20 mb-8 md:mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-[95%] md:w-[90%] mx-auto max-w-7xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-[90%] mx-auto max-w-7xl">
                 {/* Left Section */}
-                <Fade direction="left" triggerOnce duration={2000}>
+                <Fade direction="left" triggerOnce>
                     <div>
                         <p className="uppercase text-sm font-semibold mb-2">Testimonials</p>
                         <h2 className="text-2xl lg:text-4xl font-bold mt-2 md:mt-4">
                             Our Members Satisfaction
                         </h2>
                         <div className="w-16 h-1 bg-yellow-400 mt-4 lg:mt-8 mb-4 md:mb-6"></div>
-                        <Fade direction="left" triggerOnce delay='50'>
+                        <Fade direction="left" triggerOnce>
                         <p className="text-gray-400 w-full md:w-[70%]">
                             Discover how our Marathon Management System has transformed the way runners, coaches, and event organizers interact with our platform. Read firsthand experiences from our satisfied users!
                         </p>
@@ -76,7 +76,7 @@ const Testimonial = () => {
                         {testimonials.map((testimonial) => (
                             <SwiperSlide key={testimonial.id}>
                                 <div className="flex flex-col items-start space-y-4 lg:space-y-8">
-                                    <p className="text-gray-100 opacity-70 text-xl font-semibold italic">{testimonial.text}</p>
+                                    <p className="text-gray-100 opacity-70 lg:text-xl font-semibold italic">"{testimonial.text}"</p>
                                     <div className="flex items-center justify-between w-full">
                                         <div className="flex items-center gap-4">
                                             <img
@@ -86,7 +86,7 @@ const Testimonial = () => {
                                             />
                                             <div>
                                                 <p className="font-bold text-lg">{testimonial.name}</p>
-                                                <p className="text-gray-400 text-lg ">{testimonial.role}</p>
+                                                <p className="text-gray-400 md:text-lg ">{testimonial.role}</p>
                                             </div>
                                         </div>
                                         <FaQuoteLeft className="text-4xl lg:text-6xl text-yellow-400" />

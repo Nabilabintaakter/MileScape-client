@@ -130,7 +130,7 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
     >
       <Fade duration={700} cascade>
         <div
-          className="relative bg-white rounded shadow-lg w-[95%]  max-w-6xl p-6 mx-auto lg:my-56 my-32 overflow-y-auto"
+          className="relative bg-white rounded shadow-lg w-[90%] max-w-7xl p-6 mx-auto lg:my-56 my-32 overflow-y-auto"
 
         >
           <h2 className="text-2xl font-bold text-center mb-4">Update Marathon</h2>

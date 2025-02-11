@@ -26,7 +26,7 @@ const UpcomingCard = ({ marathon }) => {
             : "TBD";
 
     return (
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-md overflow-hidden h-auto md:h-64  lg:h-60">
+        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-md overflow-hidden h-auto md:h-64 lg:h-60">
             <div className="w-full md:w-2/5">
                 <img
                     src={image}
@@ -76,7 +76,7 @@ const UpcomingCard = ({ marathon }) => {
                         </li>
                     </ul>
                 </div>
-                <div className="bg-[#424242] flex flex-col justify-center items-center w-full md:w-[35%] p-4 border-l-[1px] border-dashed border-l-yellow-400">
+                <div className="bg-[#424242] flex flex-col justify-center items-center w-full md:w-[35%] p-4 border-t-[1px] md:border-t-0 md:border-l-[1px] border-dashed border-t-yellow-400 md:border-l-yellow-400">
                     <p className="text-4xl font-bold text-yellow-400">
                         ${ticketPrice || "Free"}
                     </p>

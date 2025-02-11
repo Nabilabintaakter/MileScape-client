@@ -3,6 +3,7 @@ import logo from '../../assets/logoo.png';
 import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { FaSignOutAlt } from 'react-icons/fa';
+import { ImMenu } from 'react-icons/im';
 
 const Navbar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
@@ -80,23 +81,12 @@ const Navbar = () => {
         <div
             className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white bg-opacity-80 backdrop-blur-md' : 'bg-white'
                 }`}>
-            <div className="navbar w-[98%] md:w-[90%] mx-auto max-w-7xl">
+            <div className="navbar w-[90%] mx-auto max-w-7xl p-0">
                 <div className="navbar-start">
                     {/* mobile */}
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="mr-2 lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-7 w-7"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
+                        <div tabIndex={0} role="button" className=" lg:hidden">
+                        <ImMenu className='text-2xl' />
                         </div>
                         <ul
                             tabIndex={0}
@@ -104,12 +94,12 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/' className=' items-center gap-2 hidden lg:flex'>
+                    <Link onClick={scrollToTop} to='/' className=' items-center gap-2 hidden lg:flex'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
                         <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
                     </Link>
                 </div>
-                <div className='navbar-center'>
+                <div onClick={scrollToTop} className='navbar-center'>
                     <Link to='/' className=' items-center gap-2 flex lg:hidden'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
                         <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
@@ -136,9 +126,12 @@ const Navbar = () => {
                                             tabIndex={0}
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                             <li className='flex justify-center items-center text-xl text-blue-800 font-bold mb-2'>{user?.displayName}</li>
+                                            <li className='px-2'>
+                                                <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 flex justify-center items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Logout</button>
+                                            </li>
                                         </ul>
                                     </div>
-                                    <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Logout</button>
+                                    <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 hidden md:flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Logout</button>
                                 </div>
                                 :
                                 <div className='flex items-center gap-2'>

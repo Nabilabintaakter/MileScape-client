@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
         document.title = `Why Choose Us | Milescape`;
     }, [])
     return (
-        <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
+        <div className='w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
             <Fade direction="up" triggerOnce duration={2000}>
                 <div className=" text-center bg-gradient-to-r from-blue-100 to-blue-200 pt-5 pb-12 px-6 rounded shadow-lg">
                     <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-6">Why Choose Milescape?</h2>

@@ -22,13 +22,13 @@ const UpcomingMarathons = () => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
         }} className='w-full pt-16 md:pb-20'>
-            <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl rounded-md '>
+            <div className='w-[90%] mx-auto max-w-7xl'>
                 <Fade direction="up" triggerOnce duration={2000}>
                     <Header title='Upcoming Marathons' subTitle='Get Ready to Join the Race'></Header>
                 </Fade>
 
                 {/* Marathons Grid */}
-                <div className='w-full grid grid-cols-1 gap-4 mt-10 pb-16 md:pb-0'>
+                <div className='w-full mx-auto max-w-7xl grid grid-cols-1 gap-4 mt-10 pb-16 md:pb-0 px-0'>
                     {
                         marathons.map((marathon, index) => (
                             <Fade 

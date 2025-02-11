@@ -33,7 +33,7 @@ const Details = () => {
             backgroundRepeat: "no-repeat",
         }}>
             <Fade triggerOnce>
-                <div className="bg-white rounded shadow-lg overflow-hidden w-[95%] mx-auto md:max-w-6xl transition transform hover:scale-102 hover:shadow-xl duration-300 ease-in-out ">
+                <div className="bg-white rounded shadow-lg overflow-hidden w-[90%] mx-auto md:max-w-7xl transition transform hover:scale-102 hover:shadow-xl duration-300 ease-in-out ">
                     <div className="md:flex">
                         <div className="md:w-1/2 relative">
                             <img src={image} alt={title} className="w-full h-[250px] md:h-full object-cover" />

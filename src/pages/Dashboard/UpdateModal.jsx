@@ -73,7 +73,7 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
     className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-y-auto"
 >
     <Fade duration={700} cascade>
-        <div className="relative bg-white rounded shadow-lg w-[95%] max-w-6xl p-6 z-50 mx-auto pt-64 pb-[calc(100vh-500px)]">
+        <div className="relative bg-white rounded shadow-lg w-[90%] max-w-7xl p-6 z-50 mx-auto pt-64 pb-[calc(100vh-500px)]">
             <div className="scrollbar-hide max-h-[90vh] overflow-y-auto"> {/* Max height set */}
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-yellow-500">
                     <span className="text-gray-800">UPDATE</span> YOUR REGISTRATION

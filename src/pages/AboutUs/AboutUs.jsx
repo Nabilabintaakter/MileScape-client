@@ -9,7 +9,7 @@ const AboutUs = () => {
     }, [])
     return (
         <div className="bg-gray-100 text-gray-800 px-8 pb-8 md:px-16 md:pb-16 pt-6">
-            <div className="w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10">
+            <div className="w-[90%] mx-auto max-w-7xl mb-5 md:mb-10">
                 <Fade direction="up" triggerOnce duration={2000}>
                     <div className='mt-3 mb-5 md:mt-5 md:mb-8'>
                         <Header title='Who we are' subTitle='About Us'></Header>

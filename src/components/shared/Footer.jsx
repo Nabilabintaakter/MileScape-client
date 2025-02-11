@@ -17,7 +17,7 @@ const Footer = () => {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/80"></div>
 
-      <div className="w-[95%] md:w-[90%] max-w-7xl mx-auto py-10 relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-[90%] max-w-7xl mx-auto py-10 relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* About Section */}
         <div>
           <div className="flex items-center gap-3">
