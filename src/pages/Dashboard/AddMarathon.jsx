@@ -64,16 +64,29 @@ const AddMarathon = () => {
             </Fade>
             <Fade triggerOnce delay='10'>
                 <form onSubmit={handleSubmit} className="bg-blue-50 shadow-md rounded p-6 md:p-4 lg:p-8 space-y-6">
-                    {/* Marathon Title */}
-                    <div>
-                        <label className="block text-lg font-semibold text-gray-800 mb-2">Marathon Title</label>
-                        <input
-                            type="text"
-                            name="title"
-                            placeholder="Enter marathon title"
-                            className="input input-bordered w-full text-base p-3"
-                            required
-                        />
+                    {/* Marathon Title & location*/}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-lg font-semibold text-gray-800 mb-2">Marathon Title</label>
+                            <input
+                                type="text"
+                                name="title"
+                                placeholder="Enter marathon title"
+                                className="input input-bordered w-full text-base p-3"
+                                required
+                            />
+                        </div>
+                        {/* Location */}
+                        <div>
+                            <label className="block text-lg font-semibold text-gray-800 mb-2">Location</label>
+                            <input
+                                type="text"
+                                name="location"
+                                placeholder="Enter location"
+                                className="input input-bordered w-full text-base p-3"
+                                required
+                            />
+                        </div>
                     </div>
 
                     {/* Registration Dates */}
@@ -100,48 +113,36 @@ const AddMarathon = () => {
                         </div>
                     </div>
 
-                    {/* Marathon Start Date */}
-                    <div className="w-full">
-                        <label className="block text-lg font-semibold text-gray-800 mb-2">Marathon Start Date</label>
-                        <DatePicker
-                            selected={marathonStartDate}
-                            onChange={(date) => setMarathonStartDate(date)}
-                            className="input input-bordered w-full text-base p-3"
-                            placeholderText="Select marathon start date"
-                            required
-                        />
-                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Marathon Start Date */}
+                        <div className="w-full">
+                            <label className="block text-lg font-semibold text-gray-800 mb-2">Marathon Start Date</label>
+                            <DatePicker
+                                selected={marathonStartDate}
+                                onChange={(date) => setMarathonStartDate(date)}
+                                className="input input-bordered w-full text-base p-3"
+                                placeholderText="Select marathon start date"
+                                required
+                            />
+                        </div>
 
-
-
-                    {/* Location */}
-                    <div>
-                        <label className="block text-lg font-semibold text-gray-800 mb-2">Location</label>
-                        <input
-                            type="text"
-                            name="location"
-                            placeholder="Enter location"
-                            className="input input-bordered w-full text-base p-3"
-                            required
-                        />
-                    </div>
-
-                    {/* Running Distance */}
-                    <div>
-                        <label className="block text-lg font-semibold text-gray-800 mb-2">Running Distance</label>
-                        <select
-                            name="distance"
-                            className="select select-bordered w-full text-base p-3"
-                            defaultValue=""
-                            required
-                        >
-                            <option value="" disabled>
-                                Select distance
-                            </option>
-                            <option value="25k">25k</option>
-                            <option value="10k">10k</option>
-                            <option value="3k">3k</option>
-                        </select>
+                        {/* Running Distance */}
+                        <div>
+                            <label className="block text-lg font-semibold text-gray-800 mb-2">Running Distance</label>
+                            <select
+                                name="distance"
+                                className="select select-bordered w-full text-base p-3"
+                                defaultValue=""
+                                required
+                            >
+                                <option value="" disabled>
+                                    Select distance
+                                </option>
+                                <option value="25k">25k</option>
+                                <option value="10k">10k</option>
+                                <option value="3k">3k</option>
+                            </select>
+                        </div>
                     </div>
 
                     {/* Description */}

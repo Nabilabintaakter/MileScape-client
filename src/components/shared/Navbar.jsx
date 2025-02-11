@@ -79,7 +79,7 @@ const Navbar = () => {
 
     return (
         <div
-            className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white bg-opacity-80 backdrop-blur-md' : 'bg-white'
+            className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white bg-opacity-90 backdrop-blur-md' : 'bg-white'
                 }`}>
             <div className="navbar w-[90%] mx-auto max-w-7xl p-0">
                 <div className="navbar-start">
@@ -96,13 +96,13 @@ const Navbar = () => {
                     </div>
                     <Link onClick={scrollToTop} to='/' className=' items-center gap-2 hidden lg:flex'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
-                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
+                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></p>
                     </Link>
                 </div>
                 <div onClick={scrollToTop} className='navbar-center'>
                     <Link to='/' className=' items-center gap-2 flex lg:hidden'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
-                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
+                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></p>
                     </Link>
                 </div>
                 <div className="navbar-end flex items-center gap-5">

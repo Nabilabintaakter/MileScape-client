@@ -1,75 +1,120 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from "react-accessible-accordion";
-import { Fade, Slide } from "react-awesome-reveal";
-import "react-accessible-accordion/dist/fancy-example.css"; // Accordion styling
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemButton,
+    AccordionItemPanel
+} from "react-accessible-accordion";
+import { Fade } from "react-awesome-reveal";
 import Header from "../../components/shared/Header";
 
 const FAQ = () => {
-    useEffect(() => {
-        document.title = `Frequently Asked Questions | Milescape`;
-    }, [])
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleAccordion = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     const faqs = [
         {
-            question: "What is Milescape?",
+            question: "What is Milescape, and how does it work?",
             answer:
-                "Milescape is a marathon management platform that connects event organizers and runners to create seamless and inspiring marathon experiences.",
+                "Milescape is an all-in-one marathon management platform designed to connect event organizers and runners, ensuring seamless event planning, registration, and performance tracking. Whether you're an organizer looking to streamline marathon logistics or a runner searching for the perfect challenge, Milescape provides a user-friendly experience to make your journey effortless and enjoyable."
         },
         {
-            question: "How do I register for a marathon?",
+            question: "How can I register for a marathon through Milescape?",
             answer:
-                "You can browse upcoming events on our platform, choose your desired marathon, and register directly through the event page with a few clicks.",
+                "Registering for a marathon on Milescape is quick and hassle-free. Simply browse through our curated list of upcoming marathons, select your preferred event, and complete the registration in just a few clicks. Our platform ensures a secure and smooth registration process, providing instant confirmation and event details."
         },
         {
-            question: "Is Milescape free to use?",
+            question: "Is Milescape free to use for runners and event organizers?",
             answer:
-                "Milescape is free for runners to explore and join marathons. Event organizers can use our free tools or opt for premium features for added benefits.",
+                "For runners, Milescape is entirely free, allowing them to explore events, register, and access essential race information. Event organizers can also use our free tools to manage marathons effectively. However, we offer premium features—such as advanced analytics, priority listing, and promotional tools—to help organizers maximize their event’s reach and efficiency."
         },
         {
-            question: "Can I track my marathon performance?",
+            question: "Can I track my marathon performance using Milescape?",
             answer:
-                "Yes! Milescape provides real-time tracking and detailed performance analytics, helping you measure and improve your results over time.",
+                "Absolutely! Milescape provides real-time performance tracking and post-race analytics, allowing you to monitor key metrics such as pace, distance, completion time, and personal progress. Our intuitive dashboard helps runners set goals, compare past performances, and continuously improve their endurance and speed."
         },
         {
-            question: "How do event organizers benefit from Milescape?",
-            answer:
-                "Organizers can easily manage events, track participant data, and streamline registrations, saving time and ensuring smooth operations.",
+            question: "What benefits do event organizers get from using Milescape?",
+            answer: (
+                <>
+                    Event organizers gain access to a comprehensive set of tools for managing marathons efficiently, including:
+                    <ul className="list-disc ml-5 mt-2">
+                        <li><strong>Seamless registration system</strong> – Automate participant sign-ups and manage entries effortlessly.</li>
+                        <li><strong>Real-time tracking & analytics</strong> – Monitor participant progress and overall event performance.</li>
+                        <li><strong>Marketing & promotion tools</strong> – Increase event visibility through our platform’s network.</li>
+                        <li><strong>Data management & insights</strong> – Get detailed reports on participant demographics and feedback for better planning in future events.</li>
+                    </ul>
+                </>
+            )
         },
+        {
+            question: "Does Milescape offer customer support for runners and organizers?",
+            answer:
+                "Yes, we prioritize user satisfaction with dedicated customer support available for both runners and organizers. Whether you need assistance with registration, event management, or technical support, our team is ready to help via live chat, email, and phone support."
+        },
+        {
+            question: "Can I create and host my own marathon on Milescape?",
+            answer:
+                "Of course! If you're an event organizer looking to host a marathon, Milescape provides a streamlined process to create, customize, and manage your event efficiently. From setting up registration forms to tracking participants and handling payments, we offer a full suite of tools to ensure your marathon is a success."
+        },
+        {
+            question: "Does Milescape support virtual marathons?",
+            answer:
+                "Yes, Milescape supports both physical and virtual marathons. Virtual marathon participants can register, complete their runs at their own pace from anywhere, and submit their results through our tracking system. Organizers can engage global participants with leaderboards, digital certificates, and exclusive rewards."
+        },
+        {
+            question: "How secure is my data on Milescape?",
+            answer:
+                "We take data security seriously. Milescape follows industry-leading encryption standards to protect your personal and payment information. Our platform ensures a secure transaction process and maintains strict privacy policies to safeguard user data."
+        },
+        {
+            question: "How can I stay updated about upcoming marathons?",
+            answer:
+                "To stay informed about upcoming marathons, sign up for our newsletter or follow us on social media. Milescape also allows users to set event alerts, so you never miss out on registration deadlines or exciting race opportunities."
+        }
     ];
 
     return (
-        <div className="w-[90%] mx-auto max-w-7xl mb-5 md:mb-10 lg:mb-16">
+        <div className="w-[90%] mx-auto max-w-7xl mb-16">
             <div className="w-full max-w-4xl mx-auto text-center">
-
                 <Fade direction="up" triggerOnce duration={2000}>
                     <div className='mt-3 mb-5 md:mt-5 md:mb-10 lg:mb-14'>
-                        <Header title='Learn More!' subTitle='Frequently Asked Questions'></Header>
+                        <Header title='Learn More!' subTitle='Frequently Asked Questions' />
                     </div>
                 </Fade>
-                <p className="text-lg text-gray-700 mb-10">
-                    Have questions about Milescape? We've got answers! Explore our FAQs below to find the information you need.
-                </p>
             </div>
-            <Slide direction="up" triggerOnce>
-                <Accordion allowZeroExpanded className="bg-white shadow-lg rounded overflow-hidden">
+
+            <Fade direction="up" cascade triggerOnce>
+                <Accordion allowZeroExpanded className="bg-gradient-to-r from-blue-50 to-blue-100 shadow-2xl rounded-lg overflow-hidden">
                     {faqs.map((faq, index) => (
-                        <AccordionItem
-                            key={index}
-                            className="border-b border-gray-200"
-                        >
+                        <AccordionItem key={index} className="border-b border-blue-200 rounded-lg">
                             <AccordionItemHeading>
-                                <AccordionItemButton className="text-lg font-semibold flex justify-between items-center p-4 hover:bg-gray-50 transition-colors cursor-pointer">
-                                    {faq.question}
-                                    <FaChevronDown className="text-blue-600" />
+                                <AccordionItemButton
+                                    className="text-lg font-semibold flex justify-between items-center p-5 bg-white hover:bg-blue-100 transition-all duration-300 cursor-pointer rounded-lg shadow-md"
+                                    onClick={() => toggleAccordion(index)}
+                                >
+                                    <span className="text-blue-900">{index + 1}. {faq.question}</span>
+                                    <FaChevronDown
+                                        className={`text-blue-900 ${activeIndex === index ? "rotate-180" : ""}`}
+                                    />
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel className="text-gray-700 px-4 pb-4">
-                                <p>{faq.answer}</p>
-                            </AccordionItemPanel>
+                            <Fade direction="up" triggerOnce>
+                                <AccordionItemPanel
+                                    className="text-gray-700 p-4 transition-all duration-300 bg-blue-50 border-l-4 border-blue-400 rounded-lg"
+                                >
+                                    <p className="leading-relaxed">{faq.answer}</p>
+                                </AccordionItemPanel>
+                            </Fade>
                         </AccordionItem>
                     ))}
                 </Accordion>
-            </Slide>
+            </Fade>
         </div>
     );
 };
