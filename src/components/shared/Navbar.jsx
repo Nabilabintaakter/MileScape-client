@@ -79,7 +79,7 @@ const Navbar = () => {
     return (
         <div
             className={`sticky top-0 z-50 transition-all duration-300 ${
-                isScrolled ? 'bg-white bg-opacity-60 backdrop-blur-md' : 'bg-white'
+                isScrolled ? 'bg-white bg-opacity-80 backdrop-blur-md' : 'bg-white'
             }`}>
             <div className="navbar w-[98%] md:w-[90%] mx-auto max-w-7xl">
                 <div className="navbar-start">
@@ -107,7 +107,7 @@ const Navbar = () => {
                     </div>
                     <Link to='/' className='flex items-center gap-2'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
-                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILESCAPE</p>
+                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
                     </Link>
                 </div>
                 <div className="navbar-end flex items-center gap-5">
