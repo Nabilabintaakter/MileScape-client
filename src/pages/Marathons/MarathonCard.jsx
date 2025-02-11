@@ -38,7 +38,7 @@ const MarathonCard = ({ marathon }) => {
                 
                 {/* Button Section */}
                 <div className="mt-4">
-                    <Link to={`/marathons/${_id}`} className="bg-[#f0d802] text-white py-2 px-6 rounded-sm btn btn-sm border-none hover:bg-[#d3be01] transition duration-500 font-semibold  hover:shadow-lg">
+                    <Link to={`/marathons/${_id}`} className="bg-[#f0d802] text-white py-2 px-6 rounded btn btn-sm border-none hover:bg-[#d3be01] transition duration-500 font-semibold  hover:shadow-lg">
                         See Details
                     </Link>
                 </div>

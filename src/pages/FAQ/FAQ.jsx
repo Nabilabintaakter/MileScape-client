@@ -51,7 +51,7 @@ const FAQ = () => {
                 </p>
             </div>
             <Slide direction="up" triggerOnce>
-                <Accordion allowZeroExpanded className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <Accordion allowZeroExpanded className="bg-white shadow-lg rounded overflow-hidden">
                     {faqs.map((faq, index) => (
                         <AccordionItem
                             key={index}

@@ -63,7 +63,7 @@ const AddMarathon = () => {
                 <Header title='Create and Manage Marathon Events' subTitle='Add New Marathon'></Header>
             </Fade>
             <Fade triggerOnce delay='10'>
-                <form onSubmit={handleSubmit} className="bg-blue-50 shadow-md rounded-lg p-6 md:p-4 lg:p-8 space-y-6">
+                <form onSubmit={handleSubmit} className="bg-blue-50 shadow-md rounded p-6 md:p-4 lg:p-8 space-y-6">
                     {/* Marathon Title */}
                     <div>
                         <label className="block text-lg font-semibold text-gray-800 mb-2">Marathon Title</label>

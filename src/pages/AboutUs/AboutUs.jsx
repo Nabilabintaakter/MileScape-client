@@ -27,7 +27,7 @@ const AboutUs = () => {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     <Fade direction="up" triggerOnce duration={1500}>
-                        <div className="bg-blue-100 shadow-md rounded-lg p-6 text-center">
+                        <div className="bg-blue-100 shadow-md rounded p-6 text-center">
                             <FaRunning className="text-6xl text-blue-600 mx-auto mb-4" />
                             <h3 className="text-2xl font-semibold mb-2">Our Mission</h3>
                             <p>
@@ -38,7 +38,7 @@ const AboutUs = () => {
                     </Fade>
 
                     <Fade direction="up" triggerOnce duration={1500}>
-                        <div className="bg-green-100 shadow-md rounded-lg p-6 text-center">
+                        <div className="bg-green-100 shadow-md rounded p-6 text-center">
                             <FaUsers className="text-6xl text-green-600 mx-auto mb-4" />
                             <h3 className="text-2xl font-semibold mb-2">Our Community</h3>
                             <p>
@@ -49,7 +49,7 @@ const AboutUs = () => {
                     </Fade>
 
                     <Fade direction="up" triggerOnce duration={1500}>
-                        <div className="bg-purple-100 shadow-md rounded-lg p-6 text-center">
+                        <div className="bg-purple-100 shadow-md rounded p-6 text-center">
                             <FaChartLine className="text-6xl text-purple-600 mx-auto mb-4" />
                             <h3 className="text-2xl font-semibold mb-2">Our Vision</h3>
                             <p>

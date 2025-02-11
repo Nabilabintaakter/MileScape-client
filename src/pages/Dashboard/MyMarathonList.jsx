@@ -46,7 +46,7 @@ const MyMarathonList = () => {
               <div className='mt-6'>
                 <div className='overflow-x-auto'>
                   <div className='inline-block min-w-full py-2 align-middle'>
-                    <div className='overflow-hidden border border-gray-200 md:rounded-lg'>
+                    <div className='overflow-hidden border border-gray-200 md:rounded'>
                       <table className='min-w-full divide-y divide-gray-200 table-striped'>
                         <thead className='bg-gray-50'>
                           <tr>

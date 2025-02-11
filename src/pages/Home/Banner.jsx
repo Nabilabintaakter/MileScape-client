@@ -58,7 +58,7 @@ const Banner = () => {
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={slide.id}>
-                        <div className="relative h-[400px] lg:h-[450px] flex items-center overflow-hidden">
+                        <div className="relative h-[75vh] flex items-center">
                             <div
                                 className={`absolute inset-0 transform transition-transform duration-[6000ms] ease-out ${
                                     activeIndex === index ? "scale-110" : "scale-100"
@@ -73,7 +73,7 @@ const Banner = () => {
                             <div className="flex justify-start flex-col w-[90%] mx-auto max-w-7xl relative z-10 text-white">
                                 <div className="max-w-4xl">
                                     <Fade triggerOnce duration={1000} direction="left" delay={0}>
-                                        <h1 className="text-4xl md:text-[52px] font-bold leading-tight mb-4 w-full md:w-[70%]">
+                                        <h1 className="text-4xl lg:text-[52px] font-bold leading-tight mb-4 w-full md:w-[70%]">
                                             Empower Marathon Enthusiasts
                                         </h1>
                                     </Fade>
@@ -81,7 +81,7 @@ const Banner = () => {
                                         <div className="my-4 md:my-6 w-24 h-1 bg-[#fae102] rounded"></div>
                                     </Fade>
                                     <Fade triggerOnce direction="left" duration={1000} delay={400}>
-                                        <p className="w-full md:w-[50%] text-base md:text-lg font-semibold mb-6">
+                                        <p className="w-full md:w-[50%] text-base lg:text-lg font-semibold mb-6">
                                             Connect with passionate runners, manage events
                                             effortlessly, and celebrate victories together.
                                         </p>

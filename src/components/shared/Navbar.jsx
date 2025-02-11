@@ -26,12 +26,12 @@ const Navbar = () => {
         };
     }, []);
 
-    const signOutHandler = ()=>{
+    const signOutHandler = () => {
         handleSignOut()
-        .then(()=>{
-            navigate('/login')
-        })
-    } 
+            .then(() => {
+                navigate('/login')
+            })
+    }
 
     const links = <>
         <li>
@@ -46,7 +46,7 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
-            onClick={scrollToTop}
+                onClick={scrollToTop}
                 to='/marathons'
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
@@ -56,7 +56,7 @@ const Navbar = () => {
         </li>
         <li className={`${user ? 'block' : 'hidden'}`}>
             <NavLink
-            onClick={scrollToTop}
+                onClick={scrollToTop}
                 to='/dashboard/addMarathon'
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
@@ -66,21 +66,20 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
-            onClick={scrollToTop}
+                onClick={scrollToTop}
                 to='/aboutUs'
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
                 }>
-                ABOUT US
+                ABOUTUS
             </NavLink>
         </li>
     </>;
 
     return (
         <div
-            className={`sticky top-0 z-50 transition-all duration-300 ${
-                isScrolled ? 'bg-white bg-opacity-80 backdrop-blur-md' : 'bg-white'
-            }`}>
+            className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white bg-opacity-80 backdrop-blur-md' : 'bg-white'
+                }`}>
             <div className="navbar w-[98%] md:w-[90%] mx-auto max-w-7xl">
                 <div className="navbar-start">
                     {/* mobile */}
@@ -105,7 +104,13 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/' className='flex items-center gap-2'>
+                    <Link to='/' className=' items-center gap-2 hidden lg:flex'>
+                        <img className='w-8 lg:w-10' src={logo} alt="" />
+                        <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
+                    </Link>
+                </div>
+                <div className='navbar-center'>
+                    <Link to='/' className=' items-center gap-2 flex lg:hidden'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
                         <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></p>
                     </Link>
@@ -133,12 +138,12 @@ const Navbar = () => {
                                             <li className='flex justify-center items-center text-xl text-blue-800 font-bold mb-2'>{user?.displayName}</li>
                                         </ul>
                                     </div>
-                                    <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Log Out</button>
+                                    <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Logout</button>
                                 </div>
                                 :
                                 <div className='flex items-center gap-2'>
-                                    <Link to='/login' className='bg-blue-400 text-base font-normal btn btn-sm rounded border-none shadow-none '>Login</Link>
-                                    <Link to='/register' className='bg-[#fae102] btn btn-sm rounded border-none shadow-none text-base font-normal'>Register</Link>
+                                    <Link to='/login' className='bg-blue-500 text-base font-normal rounded py-1 md:py-[6px] px-4  border-[1px] border-blue-500 shadow-none text-white hover:text-blue-600 hover:bg-white transition-all duration-300'>Login</Link>
+                                    <Link to='/register' className='bg-[#fae102] hidden md:block py-1 px-2 md:py-[6px] md:px-4 rounded border-none shadow-none text-base font-normal hover:bg-yellow-500 transition-all duration-300'>Register</Link>
                                 </div>
                         }
                     </div>

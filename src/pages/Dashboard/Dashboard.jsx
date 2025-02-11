@@ -6,7 +6,7 @@ import { Fade } from 'react-awesome-reveal';
 const Dashboard = () => {
     return (
         <div className="w-[95%] lg:w-[90%] mx-auto max-w-7xl mb-8 md:mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-2 bg-white rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-2 bg-white rounded overflow-hidden">
                 {/* Sidebar */}
                 <div className="bg-blue-50 p-2  lg:p-4 col-span-1 flex flex-col gap-1 md:gap-2 ">
                     <NavLink

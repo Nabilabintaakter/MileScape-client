@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
     return (
         <div className='w-[95%] md:w-[90%] mx-auto max-w-7xl mb-5 md:mb-10'>
             <Fade direction="up" triggerOnce duration={2000}>
-                <div className=" text-center bg-gradient-to-r from-blue-100 to-blue-200 pt-5 pb-12 px-6 rounded-lg shadow-lg">
+                <div className=" text-center bg-gradient-to-r from-blue-100 to-blue-200 pt-5 pb-12 px-6 rounded shadow-lg">
                     <h2 className="text-2xl md:text-4xl font-bold text-blue-700 mb-6">Why Choose Milescape?</h2>
                     <p className="text-lg text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
                         Milescape is more than just a marathon platform—it's a movement designed to bring people together through fitness and wellness. Whether you're a runner looking to track your progress or an event organizer managing marathons, we offer a range of tools and resources that elevate your marathon experience.

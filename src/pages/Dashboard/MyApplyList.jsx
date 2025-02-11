@@ -46,7 +46,7 @@ const MyApplyList = () => {
             <select
               name="location"
               id="location"
-              className="border p-4 rounded-lg"
+              className="border p-4 rounded"
               onChange={(e) => setFilter(e.target.value)}
             >
               <option value="">Filter By Location</option>
@@ -69,7 +69,7 @@ const MyApplyList = () => {
           </div>
           {/* Search Form */}
 
-          <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
+          <div className="flex p-1 overflow-hidden border rounded focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
             <input
               className="px-3 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
               type="text"
@@ -93,7 +93,7 @@ const MyApplyList = () => {
             <div className='mt-6'>
               <div className='overflow-x-auto'>
                 <div className='inline-block min-w-full py-2 align-middle'>
-                  <div className='overflow-hidden border border-gray-200 md:rounded-lg'>
+                  <div className='overflow-hidden border border-gray-200 md:rounded'>
                     <table className='min-w-full divide-y divide-gray-200 table-striped'>
                       <thead className='bg-gray-50'>
                         <tr>
