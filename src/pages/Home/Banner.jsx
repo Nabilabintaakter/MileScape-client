@@ -10,9 +10,10 @@ import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { IoArrowRedo } from "react-icons/io5";
 
 const Banner = () => {
-    const [activeIndex, setActiveIndex] = useState(0); // Track the active slide index
+    const [activeIndex, setActiveIndex] = useState(0); 
     const swiperRef = useRef(null);
 
     const slides = [
@@ -33,7 +34,7 @@ const Banner = () => {
     useEffect(() => {
         if (swiperRef.current) {
             swiperRef.current.swiper.on("slideChange", () => {
-                setActiveIndex(swiperRef.current.swiper.realIndex); // Update active slide index
+                setActiveIndex(swiperRef.current.swiper.realIndex); 
             });
         }
     }, []);
@@ -58,7 +59,6 @@ const Banner = () => {
                 {slides.map((slide, index) => (
                     <SwiperSlide key={slide.id}>
                         <div className="relative h-[400px] lg:h-[450px] flex items-center overflow-hidden">
-                            {/* Background Image with Zoom-in Effect */}
                             <div
                                 className={`absolute inset-0 transform transition-transform duration-[6000ms] ease-out ${
                                     activeIndex === index ? "scale-110" : "scale-100"
@@ -87,8 +87,8 @@ const Banner = () => {
                                         </p>
                                     </Fade>
                                     <Fade triggerOnce direction="left" duration={1000} delay={600}>
-                                        <Link to='/marathons' className="px-6 py-2 bg-yellow-500 text-black text-sm md:text-base font-semibold rounded hover:bg-yellow-600 transition-all">
-                                            Join Now
+                                        <Link to='/marathons' className="px-6 py-2 bg-yellow-500 text-black text-sm md:text-base flex items-center w-fit font-semibold rounded hover:bg-yellow-600 transition-all">
+                                           <p className="flex items-center gap-2"> Join Now <IoArrowRedo /></p>
                                         </Link>
                                     </Fade>
                                 </div>

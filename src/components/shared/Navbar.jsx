@@ -117,10 +117,10 @@ const Navbar = () => {
                     <div>
                         {
                             user ?
-                                <div className='flex items-center gap-2'>
+                                <div className='flex items-center gap-2 lg:gap-4'>
                                     <div className="dropdown dropdown-end">
-                                        <div tabIndex={0} role="button" className="w-10 h-10  btn-circle avatar border-2 border-blue-800">
-                                            <div className="w-full rounded-full">
+                                        <div tabIndex={0} role="button" className="w-10 h-10  btn-circle avatar border-2 border-blue-800 mt-1">
+                                            <div className="w-full rounded-full ">
                                                 <img
                                                     referrerPolicy="no-referrer"
                                                     alt="user"
@@ -133,12 +133,12 @@ const Navbar = () => {
                                             <li className='flex justify-center items-center text-xl text-blue-800 font-bold mb-2'>{user?.displayName}</li>
                                         </ul>
                                     </div>
-                                    <button onClick={signOutHandler} className='bg-red-500  rounded-none border-none shadow-none text-white font-medium py-1 px-2  md:py-2 md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2 '><FaSignOutAlt></FaSignOutAlt> Logout</button>
+                                    <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 flex items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Log Out</button>
                                 </div>
                                 :
                                 <div className='flex items-center gap-2'>
-                                    <Link to='/login' className='bg-blue-400 text-base font-normal btn btn-sm rounded-none border-none shadow-none '>Login</Link>
-                                    <Link to='/register' className='bg-[#fae102] btn btn-sm rounded-none border-none shadow-none text-base font-normal'>Register</Link>
+                                    <Link to='/login' className='bg-blue-400 text-base font-normal btn btn-sm rounded border-none shadow-none '>Login</Link>
+                                    <Link to='/register' className='bg-[#fae102] btn btn-sm rounded border-none shadow-none text-base font-normal'>Register</Link>
                                 </div>
                         }
                     </div>
