@@ -27,7 +27,7 @@ const FeaturesSection = () => {
 
   return (
     <div className="bg-[#202020] py-8 md:py-10">
-      <div className="w-[90%] max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"> 
+      <div className="w-[90%] max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
         {features.map((feature, index) => (
           <Fade
             key={index}
@@ -36,7 +36,7 @@ const FeaturesSection = () => {
             delay={isMobile ? index * 410 : index * 400}
             triggerOnce
           >
-            <div className="bg-[#202020] p-6 h-[160px] lg:h-[200px] xl:h-[150px] rounded shadow-2xl flex border-[1px] border-[#202020] hover:border-yellow-400 transition-all duration-700">
+            <div className="bg-[#202020] p-6 h-[150px] sm:h-[160px] lg:h-[200px] xl:h-[150px] rounded shadow-2xl flex border-[1px] border-[#202020] hover:border-yellow-400 hover:bg-yellow-400 hover:bg-opacity-5 hover:shadow-lg hover:shadow-yellow-400/5 transition-all duration-700">
               {/* Icon Section */}
               <div className="mr-4">{feature.icon}</div>
               {/* Text Section */}
@@ -47,6 +47,7 @@ const FeaturesSection = () => {
                 <p className="text-gray-400 font-medium text-sm">{feature.description}</p>
               </div>
             </div>
+
           </Fade>
         ))}
       </div>

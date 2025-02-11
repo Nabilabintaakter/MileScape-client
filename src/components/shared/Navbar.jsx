@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { ImMenu } from 'react-icons/im';
+import { CgMenuHotdog } from 'react-icons/cg';
 
 const Navbar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
@@ -72,7 +73,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                     isActive ? 'font-medium border-b-2 border-[#fae102]' : ''
                 }>
-                ABOUTUS
+                ABOUT US
             </NavLink>
         </li>
     </>;
@@ -85,15 +86,14 @@ const Navbar = () => {
                 <div className="navbar-start">
                     {/* mobile */}
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className=" lg:hidden">
-                        <ImMenu className='text-2xl' />
+                        <div tabIndex={0} role="button" className="lg:hidden">
+                        <CgMenuHotdog className='text-3xl text-blue-800 hover:text-blue-600 transition-all duration-300' />
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
+
                     <Link onClick={scrollToTop} to='/' className=' items-center gap-2 hidden lg:flex'>
                         <img className='w-8 lg:w-10' src={logo} alt="" />
                         <p className="text-2xl lg:text-[28px] font-bold text-black">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></p>
@@ -124,10 +124,10 @@ const Navbar = () => {
                                         </div>
                                         <ul
                                             tabIndex={0}
-                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                                            <li className='flex justify-center items-center text-xl text-blue-800 font-bold mb-2'>{user?.displayName}</li>
-                                            <li className='px-2'>
-                                                <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium py-1 px-2 md:py-[6px] md:px-4 flex justify-center items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Logout</button>
+                                            className="menu menu-sm dropdown-content bg-base-100 rounded z-[1] mt-3 w-52 p-2 shadow">
+                                            <li className='flex justify-center items-center text-xl text-black font-bold mb-2'>{user?.displayName}</li>
+                                            <li className='px-2 block  lg:hidden'>
+                                                <button onClick={signOutHandler} className='bg-red-500  rounded border-[1px] border-red-500 shadow-none text-white font-medium w-full py-1 px-2 md:py-[6px] md:px-4 flex justify-center items-center hover:bg-white hover:text-red-500 transition-all duration-300 gap-2'><FaSignOutAlt></FaSignOutAlt> Logout</button>
                                             </li>
                                         </ul>
                                     </div>

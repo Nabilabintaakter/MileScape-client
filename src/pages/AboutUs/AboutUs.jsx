@@ -27,38 +27,36 @@ const AboutUs = () => {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     <Fade direction="up" triggerOnce duration={1500}>
-                        <div className="bg-blue-100 shadow-md rounded p-6 text-center">
+                        <div className="bg-blue-100 shadow-md border-[1px] border-blue-100 hover:border-blue-600 rounded p-6 text-center flex flex-col h-full transition-all duration-300">
                             <FaRunning className="text-6xl text-blue-600 mx-auto mb-4" />
                             <h3 className="text-2xl font-semibold mb-2">Our Mission</h3>
-                            <p>
-                                To inspire fitness and community engagement through
-                                well-organized marathon events.
+                            <p className="flex-grow">
+                                To inspire fitness and community engagement through well-organized marathon events.
                             </p>
                         </div>
                     </Fade>
 
                     <Fade direction="up" triggerOnce duration={1500}>
-                        <div className="bg-green-100 shadow-md rounded p-6 text-center">
+                        <div className="bg-green-100 shadow-md border-[1px] border-green-100 hover:border-green-600 rounded p-6 text-center flex flex-col h-full transition-all duration-300">
                             <FaUsers className="text-6xl text-green-600 mx-auto mb-4" />
                             <h3 className="text-2xl font-semibold mb-2">Our Community</h3>
-                            <p>
-                                Join a growing community of runners and event organizers
-                                dedicated to promoting health and well-being.
+                            <p className="flex-grow">
+                                Join a growing community of runners and event organizers dedicated to promoting health and well-being.
                             </p>
                         </div>
                     </Fade>
 
                     <Fade direction="up" triggerOnce duration={1500}>
-                        <div className="bg-purple-100 shadow-md rounded p-6 text-center">
+                        <div className="bg-purple-100 shadow-md border-[1px] border-purple-100 hover:border-purple-600 rounded p-6 text-center flex flex-col h-full transition-all duration-300">
                             <FaChartLine className="text-6xl text-purple-600 mx-auto mb-4" />
                             <h3 className="text-2xl font-semibold mb-2">Our Vision</h3>
-                            <p>
-                                To become the go-to platform for marathon management and
-                                participation worldwide.
+                            <p className="flex-grow">
+                                To become the go-to platform for marathon management and participation worldwide.
                             </p>
                         </div>
                     </Fade>
                 </div>
+
             </div>
         </div>
     );

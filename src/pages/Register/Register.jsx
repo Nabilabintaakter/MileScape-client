@@ -87,7 +87,7 @@ const Register = () => {
                 <div className="text-center lg:text-left w-60 md:w-96 lg:w-[700px] lg:flex-1">
                     <Lottie animationData={registerLottieData}></Lottie>
                 </div>
-                <div className="card bg-base-100 w-full max-w-3xl shrink-0 shadow-2xl lg:flex-1">
+                <div className="card bg-base-100 w-full lg:max-w-3xl shrink-0 shadow-2xl lg:flex-1">
                     <form onSubmit={handleRegister} className="card-body">
                         <h1 className="text-4xl font-bold mb-5 flex justify-center">Register now!</h1>
                         <div className="form-control">

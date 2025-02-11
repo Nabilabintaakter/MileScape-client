@@ -28,12 +28,12 @@ const CountdownTimer = ({ marathonStartDate }) => {
 
   return (
     <Fade triggerOnce delay={300}>
-      <div className="relative flex flex-col justify-center items-center mt-10 bg-white/20 backdrop-blur-md z-50 rounded shadow-lg p-6 w-full max-w-xl mx-auto">
+      <div className="relative flex flex-col justify-center items-center mt-10 bg-white/20 backdrop-blur-md z-50 rounded shadow-lg p-4 md:p-6 w-full max-w-xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-200 via-white to-blue-200 rounded opacity-90"></div>
-        <div className="text-center text-blue-800 text-2xl md:text-3xl font-semibold mb-4 z-10">
+        <div className="text-center text-blue-800 text-xl md:text-3xl font-semibold mb-2 md:mb-4 z-10">
         The Race Begins In...
         </div>
-        <div className="flex justify-center space-x-6 text-gray-900 text-4xl font-bold z-10">
+        <div className="flex justify-center space-x-6 text-gray-900 text-2xl md:text-4xl font-bold z-10">
           <div className="text-center">
             <div className="text-yellow-500">{timeLeft.days}</div>
             <div className="text-sm font-medium text-gray-900">Days</div>

@@ -89,7 +89,7 @@ const FAQ = () => {
                 </Fade>
             </div>
 
-            <Fade direction="up" cascade triggerOnce >
+            <Fade cascade triggerOnce >
                 <div className="bg-gradient-to-r from-blue-50 to-blue-100 shadow-2xl rounded-lg">
                     <Accordion allowZeroExpanded className="w-full p-5 lg:p-8 mx-auto overflow-hidden">
                         {faqs.map((faq, index) => (

@@ -4,6 +4,7 @@ import logo from '../../assets/logoo.png';
 import { MdEmail, MdPhone } from "react-icons/md";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer
       style={{
@@ -22,7 +23,7 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-3">
             <img className="w-10 md:w-14" src={logo} alt="Milescape Logo" />
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold">MILE<span className='text-[#e0ce26] font-medium'>SCAPE</span></h2>
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></h2>
           </div>
           <p className="mt-4 text-sm md:text-base">
             Discover and track marathons worldwide. Join the journey towards a healthier lifestyle with our dedicated community.
@@ -90,8 +91,8 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="mt-10 border-t border-gray-700 py-6 text-center relative z-10">
-        <p className="text-sm md:text-base">&copy; 2024 Milescape, All rights reserved</p>
-      </div>
+            <p className="text-sm md:text-base">&copy; {currentYear} Milescape, All rights reserved</p>
+        </div>
     </footer>
   );
 };

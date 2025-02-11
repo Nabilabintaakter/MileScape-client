@@ -58,7 +58,7 @@ const Banner = () => {
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={slide.id}>
-                        <div className="relative h-[75vh] flex items-center">
+                        <div className="relative h-[75vh] 2xl:h-[50vh] flex items-center">
                             <div
                                 className={`absolute inset-0 transform transition-transform duration-[6000ms] ease-out ${
                                     activeIndex === index ? "scale-110" : "scale-100"
