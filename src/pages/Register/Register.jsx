@@ -9,10 +9,10 @@ import Swal from "sweetalert2";
 const Register = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const { createUser, handleUpdateProfile,setUser ,setLoading} = useContext(AuthContext);
-        useEffect(() => {
-            document.title = 'Register |Milescape';
-        }, [])
+    const { createUser, handleUpdateProfile, setUser, setLoading } = useContext(AuthContext);
+    useEffect(() => {
+        document.title = 'Register |Milescape';
+    }, [])
 
     const handleRegister = e => {
         setError('');
@@ -36,7 +36,7 @@ const Register = () => {
             setError("Password must contain at least one uppercase letter!");
             return;
         }
-        
+
         if (password !== conPassword) {
             setError("password didn't match")
             return;
@@ -82,54 +82,56 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen w-[90%] mx-auto max-w-7xl">
-            <div className="hero-content w-full flex-col lg:flex-row-reverse mt-0 mb-5 md:mb-8 lg:my-10">
-                <div className="text-center lg:text-left w-60 md:w-96 lg:w-[700px] lg:flex-1">
-                    <Lottie animationData={registerLottieData}></Lottie>
-                </div>
-                <div className="card bg-base-100 w-full lg:max-w-3xl shrink-0 shadow-2xl lg:flex-1">
-                    <form onSubmit={handleRegister} className="card-body">
-                        <h1 className="text-4xl font-bold mb-5 flex justify-center">Register now!</h1>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
+        <div className="bg-white dark:bg-[#1A1A1A]">
+            <div className="hero min-h-screen w-[90%] mx-auto max-w-7xl">
+                <div className="hero-content w-full flex-col lg:flex-row-reverse mt-0 mb-5 md:mb-8 lg:my-10">
+                    <div className="text-center lg:text-left w-60 md:w-96 lg:w-[700px] lg:flex-1">
+                        <Lottie animationData={registerLottieData}></Lottie>
+                    </div>
+                    <div className="card bg-base-100 w-full lg:max-w-3xl shrink-0 shadow-2xl lg:flex-1">
+                        <form onSubmit={handleRegister} className="card-body">
+                            <h1 className="text-4xl font-bold mb-5 flex justify-center">Register now!</h1>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="name*" name="name" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="url" placeholder="photo url*" name="photo" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email" placeholder="email*" name="email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="password" placeholder="password*" name="password" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Confirm Password</span>
+                                </label>
+                                <input type="password" placeholder="conPassword*" name="conPassword" className="input input-bordered" required />
+                            </div>
+                            {
+                                error && <p className="text-red-500">{error}</p>
+                            }
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Register</button>
+                            </div>
+                            <label className="label flex justify-center">
+                                <button href="#" className="label-text ">Already have an account? Please <Link to='/login' className="text-blue-600 ml-1 text-xl font-semibold hover:underline "> Login</Link></button>
                             </label>
-                            <input type="text" placeholder="name*" name="name" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Photo URL</span>
-                            </label>
-                            <input type="url" placeholder="photo url*" name="photo" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" placeholder="email*" name="email" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" placeholder="password*" name="password" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Confirm Password</span>
-                            </label>
-                            <input type="password" placeholder="conPassword*" name="conPassword" className="input input-bordered" required />
-                        </div>
-                        {
-                            error && <p className="text-red-500">{error}</p>
-                        }
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
-                        </div>
-                        <label className="label flex justify-center">
-                            <button href="#" className="label-text ">Already have an account? Please <Link to='/login' className="text-blue-600 ml-1 text-xl font-semibold hover:underline "> Login</Link></button>
-                        </label>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
