@@ -81,7 +81,7 @@ const Banner = () => {
                                         <div className="my-4 md:my-6 w-24 h-1 bg-[#fae102] rounded"></div>
                                     </Fade>
                                     <Fade triggerOnce direction="left" duration={1000} delay={400}>
-                                        <p className="w-full md:w-[50%] text-base lg:text-lg font-semibold mb-6">
+                                        <p className="w-full md:w-[50%] text-base lg:text-lg mb-6 text-gray-300">
                                             Connect with passionate runners, manage events
                                             effortlessly, and celebrate victories together.
                                         </p>

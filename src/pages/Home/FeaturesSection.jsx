@@ -36,7 +36,7 @@ const FeaturesSection = () => {
             delay={isMobile ? index * 410 : index * 400}
             triggerOnce
           >
-            <div className="bg-[#202020] p-6 h-[150px] sm:h-[160px] lg:h-[200px] xl:h-[150px] rounded shadow-2xl flex border-[1px] border-[#202020] hover:border-yellow-400 hover:bg-yellow-400 hover:bg-opacity-5 hover:shadow-lg hover:shadow-yellow-400/5 transition-all duration-700">
+            <div className="bg-[#202020] p-6 h-[170px] sm:h-[160px] lg:h-[200px] xl:h-[150px] rounded shadow-2xl flex border-[1px] border-[#202020] hover:border-yellow-400 hover:bg-yellow-400 hover:bg-opacity-5 hover:shadow-lg hover:shadow-yellow-400/5 transition-all duration-700">
               {/* Icon Section */}
               <div className="mr-4">{feature.icon}</div>
               {/* Text Section */}

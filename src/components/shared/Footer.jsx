@@ -23,7 +23,7 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-3">
             <img className="w-10 md:w-14" src={logo} alt="Milescape Logo" />
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></h2>
+            <h2 className="text-4xl lg:text-5xl font-bold">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></h2>
           </div>
           <p className="mt-4 text-sm md:text-base">
             Discover and track marathons worldwide. Join the journey towards a healthier lifestyle with our dedicated community.
