@@ -10,8 +10,8 @@ const WhyChooseUs = () => {
     }, []);
 
     return (
-        <div className="w-full bg-[#fae10215] pb-10">
-            <div className="pt-4 pb-8 px-8 text-center w-[90%] mx-auto max-w-7xl">
+        <div className="w-full bg-[#fae10215] dark:bg-[#1A1A1A] pb-10">
+            <div className="pt-4 pb-8 px-8 text-center w-full mx-auto max-w-7xl">
                 <Fade direction="up" triggerOnce duration={1000}>
                     <div className='mt-3 mb-5 md:mt-5 md:mb-10'>
                         <Header title='Our Story!' subTitle='Why Choose Us' />
@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
                             icon: <FaClipboardList className="text-blue-600 text-2xl" />
                         },
                         {
-                            title: "Real-Time Performance Tracking",
+                            title: "Real-Time Performance",
                             description: "Monitor your stats, progress, and milestones with precision.",
                             icon: <FaRunning className="text-blue-600 text-2xl" />
                         },
@@ -65,8 +65,8 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Call to Action */}
-                <p className="text-lg mt-10 text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    Join <Link to="/marathons" className="text-blue-700 font-semibold hover:underline">
+                <p className="text-lg mt-10 italic text-gray-700 dark:text-white max-w-3xl mx-auto leading-relaxed">
+                    Join <Link to="/marathons" className="text-blue-700 dark:text-blue-400 font-semibold hover:underline">
                         Milescape
                     </Link> today and take your marathon experience to the next level!
                 </p>

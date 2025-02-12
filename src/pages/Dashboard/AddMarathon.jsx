@@ -58,7 +58,7 @@ const AddMarathon = () => {
     };
     if (loading) return <LoadingSpinner></LoadingSpinner>
     return (
-        <div className="w-full  mx-auto  mt-2 ">
+        <div className="w-full mx-auto  mt-2 ">
             <Fade direction="up" triggerOnce duration={2000}>
                 <Header title='Create and Manage Marathon Events' subTitle='Add New Marathon'></Header>
             </Fade>

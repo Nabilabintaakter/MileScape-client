@@ -20,7 +20,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-[6px] rounded-full text-white bg-blue-900 dark:bg-yellow-400"
+      className="p-[6px] rounded-full text-white bg-blue-800 dark:bg-yellow-400"
     >
       {theme === "dark" ? <MdSunny size={20} /> : <IoMoon size={20} />}
     </button>

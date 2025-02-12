@@ -35,55 +35,55 @@ const UpcomingCard = ({ marathon }) => {
                 />
             </div>
             <div className="text-xs lg:text-base w-full md:w-3/5 flex flex-col md:flex-row ">
-                <div className="flex-1 p-6 bg-[#202020] text-white">
+                <div className="flex-1 p-6 bg-[#202020] dark:bg-white ">
                     <h2 className="text-xl font-bold mb-4 text-yellow-400">
                         {title || "Marathon Title"}
                     </h2>
                     <ul className=" text-gray-300 flex flex-col gap-2 md:gap-0 md:justify-between h-full">
                         <li className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-yellow-400" />
-                            <span>
+                            <FaCalendarAlt className="text-yellow-400 dark:text-yellow-500" />
+                            <span className="dark:text-gray-800">
                                 <strong>Registration Start:</strong>{" "}
                                 {formatDate(startRegDate)}
                             </span>
                         </li>
                         <li className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-yellow-400" />
-                            <span>
+                            <FaCalendarAlt className="text-yellow-400 dark:text-yellow-500" />
+                            <span className="dark:text-gray-800">
                                 <strong>Registration End:</strong>{" "}
                                 {formatDate(endRegDate)}
                             </span>
                         </li>
                         <li className="flex items-center gap-2">
-                            <FaCalendarAlt className="text-yellow-400" />
-                            <span>
+                            <FaCalendarAlt className="text-yellow-400 dark:text-yellow-500" />
+                            <span className="dark:text-gray-800">
                                 <strong>Marathon Date:</strong>{" "}
                                 {formatDate(marathonStartDate)}
                             </span>
                         </li>
                         <li className="flex items-center gap-2">
-                            <FaRunning className="text-yellow-400" />
-                            <span>
+                            <FaRunning className="text-yellow-400 dark:text-yellow-500" />
+                            <span className="dark:text-gray-800">
                                 <strong>Category:</strong> {category || "General"}
                             </span>
                         </li>
                         <li className="flex items-center gap-2">
-                            <FaMapMarkerAlt className="text-yellow-400" />
-                            <span>
+                            <FaMapMarkerAlt className="text-yellow-400 dark:text-yellow-500" />
+                            <span className="dark:text-gray-800">
                                 <strong>Location:</strong>{" "}
                                 {location || "Location Not Available"}
                             </span>
                         </li>
                     </ul>
                 </div>
-                <div className="bg-[#424242] flex flex-col justify-center items-center w-full md:w-[35%] p-4 border-t-[1px] md:border-t-0 md:border-l-[1px] border-dashed border-t-yellow-400 md:border-l-yellow-400">
-                    <p className="text-4xl font-bold text-yellow-400">
+                <div className="bg-[#424242] dark:bg-gray-200 flex flex-col justify-center items-center w-full md:w-[35%] p-4 border-t-[1px] md:border-t-0 md:border-l-[1px] border-dashed border-t-yellow-400 md:border-l-yellow-400">
+                    <p className="text-4xl font-bold text-yellow-400 italic dark:text-yellow-500">
                         ${ticketPrice || "Free"}
                     </p>
-                    <p className=" text-gray-400 mt-2">
+                    <p className=" text-gray-400 dark:text-gray-800 mt-2">
                         Distance: {distance || "TBD"} km
                     </p>
-                    <p className=" text-gray-400">
+                    <p className=" text-gray-400 dark:text-gray-800">
                         Participants: {totalRegistrations || "0"}
                     </p>
                 </div>

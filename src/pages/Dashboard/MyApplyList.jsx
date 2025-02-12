@@ -164,7 +164,7 @@ const MyApplyList = () => {
                 <h2 className="text-2xl italic font-semibold text-red-500 mb-2">
                   No Applications Found
                 </h2>
-                <p className="text-gray-500 text-center max-w-md">
+                <p className="text-gray-500 dark:text-gray-400 text-center max-w-md">
                   It seems like you haven't applied for any marathons yet. Start tracking your journey by applying to a marathon!
                 </p>
                 <Link to="/marathons" className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-600 transition">

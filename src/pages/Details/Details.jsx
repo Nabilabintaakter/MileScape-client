@@ -24,11 +24,10 @@ const Details = () => {
     } = marathon;
 
     const isRegistrationOpen = new Date() >= new Date(startRegDate) && new Date() <= new Date(endRegDate);
-    console.log(startRegDate);
     return (
-        <div className="flex justify-center items-center py-8 md:py-10 w-full" >
+        <div className="bg-white dark:bg-[#1A1A1A] flex justify-center items-center py-8 md:py-10 w-full" >
             <Fade triggerOnce>
-                <div className="bg-white rounded shadow-lg overflow-hidden w-[90%] mx-auto max-w-7xl ">
+                <div className="rounded shadow-lg overflow-hidden w-[90%] mx-auto max-w-7xl ">
                     <div className="md:flex">
                         <div className="md:w-1/2 relative">
                             <img src={image} alt={title} className="w-full h-[250px] md:h-full object-cover" />
@@ -40,13 +39,13 @@ const Details = () => {
                             </Fade>
 
                         </div>
-                        <div className="md:w-1/2 p-4 bg-yellow-50">
+                        <div className="md:w-1/2 p-4 bg-yellow-50 dark:bg-[#3E3E3E]">
                             <Fade triggerOnce delay={100} direction="down">
-                                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 tracking-wide">{title}</h2>
+                                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white tracking-wide">{title}</h2>
                             </Fade>
                             <div className="space-y-4 mb-6">
                                 <Fade triggerOnce delay={200} direction="down">
-                                    <div className="flex items-start text-base md:text-lg text-gray-800">
+                                    <div className="flex items-start text-base md:text-lg text-gray-800 dark:text-gray-100">
                                         <FaInfoCircle className="mr-3 mt-1 text-xl" style={{ color: '#00bcd4' }} />
                                         <div className="prose lg:prose-lg">
                                             <p className="">{description}</p>
@@ -54,29 +53,29 @@ const Details = () => {
                                     </div>
                                 </Fade>
                                 <Fade triggerOnce delay={300} direction="left">
-                                    <div className="flex items-center text-base md:text-lg text-gray-800">
+                                    <div className="flex items-center text-base md:text-lg text-gray-800 dark:text-gray-100">
                                         <FaMapMarkerAlt className="mr-3 text-xl" style={{ color: '#f44336' }} /> <span className="font-medium mr-1">Location:</span> {location}
                                     </div>
                                 </Fade>
                                 <Fade triggerOnce delay={400} direction="right">
-                                    <div className="flex items-center text-base md:text-lg text-gray-800">
+                                    <div className="flex items-center text-base md:text-lg text-gray-800 dark:text-gray-100">
                                         <FaCalendarAlt className="mr-3 text-xl" style={{ color: '#2196f3' }} /> <span className="font-medium mr-1">Marathon Date:</span>
                                         {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(marathonStartDate))}
                                     </div>
                                 </Fade>
                                 <Fade triggerOnce delay={500} direction="up">
-                                    <div className="flex items-center text-base md:text-lg text-gray-800">
+                                    <div className="flex items-center text-base md:text-lg text-gray-800 dark:text-gray-100">
                                         <FaClock className="mr-3 text-xl" style={{ color: '#ff9800' }} /> <span className="font-medium mr-1">Registration:</span>
                                         {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(startRegDate))} - {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(endRegDate))}
                                     </div>
                                 </Fade>
                                 <Fade triggerOnce delay={600} direction="right">
-                                    <div className="flex items-center text-base md:text-lg text-gray-800">
+                                    <div className="flex items-center text-base md:text-lg text-gray-800 dark:text-gray-100">
                                         <FaRunning className="mr-3 text-xl" style={{ color: '#4caf50' }} /> <span className="font-medium mr-1">Distance:</span> {distance}
                                     </div>
                                 </Fade>
                                 <Fade triggerOnce delay={700} direction="up">
-                                    <div className="flex items-center text-base md:text-lg text-gray-800">
+                                    <div className="flex items-center text-base md:text-lg text-gray-800 dark:text-gray-100">
                                         <FaUsers className="mr-3 text-xl" style={{ color: '#9c27b0' }} /> <span className="font-medium mr-1">Total Registrations:</span> {totalRegistrations}
                                     </div>
                                 </Fade>
@@ -84,7 +83,7 @@ const Details = () => {
                             </div>
                             <Fade triggerOnce delay={800} direction="down">
                                 <Link to={`/registration/${_id}`}
-                                    className={`bg-blue-600 text-white hover:bg-gray-100 hover:text-blue-800 hover:border-2 hover:border-blue-800 border-2 border-blue-600 btn rounded text-lg w-full md:w-auto transition duration-500 ${isRegistrationOpen ? '' : 'opacity-50 cursor-not-allowed'}`}
+                                    className={`bg-blue-600 text-white hover:bg-gray-100 hover:text-blue-800 hover:border-2 hover:border-blue-800 border-2 border-blue-600 btn rounded text-lg w-full md:w-auto transition duration-500 ${isRegistrationOpen ? '' : 'opacity-50 dark:bg-red-100 dark:text-red-400 cursor-not-allowed'}`}
                                     disabled={!isRegistrationOpen}
                                 >
                                     {isRegistrationOpen ? 'Register Now' : 'Registration Closed'}

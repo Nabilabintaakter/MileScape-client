@@ -47,7 +47,7 @@ const testimonials = [
 
 const Testimonial = () => {
     return (
-        <div className="bg-[#1a1a1a] text-white py-12 lg:py-20 mb-8 md:mb-16">
+        <div className="bg-[#1a1a1a] dark:bg-white text-white dark:text-[#1a1a1a]  py-12 lg:py-20 pb-8 md:pb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-[90%] mx-auto max-w-7xl">
                 {/* Left Section */}
                 <Fade direction="left" triggerOnce>
@@ -76,7 +76,7 @@ const Testimonial = () => {
                         {testimonials.map((testimonial) => (
                             <SwiperSlide key={testimonial.id}>
                                 <div className="flex flex-col items-start space-y-4 lg:space-y-8">
-                                    <p className="text-gray-100 opacity-70 lg:text-xl font-semibold italic">"{testimonial.text}"</p>
+                                    <p className="text-gray-100 dark:text-gray-600 opacity-70 lg:text-xl font-semibold italic">"{testimonial.text}"</p>
                                     <div className="flex items-center justify-between w-full">
                                         <div className="flex items-center gap-4">
                                             <img
