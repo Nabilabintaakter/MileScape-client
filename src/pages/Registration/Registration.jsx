@@ -72,7 +72,7 @@ const Registration = () => {
 
     return (
         <div
-            className="flex justify-center items-center py-5 md:py-10"
+            className="flex justify-center items-center py-5 bg-cover md:py-10"
             style={{
                 backgroundImage: `url(${bg})`,
                 backgroundSize: 'cover',
@@ -82,17 +82,17 @@ const Registration = () => {
         >
             <form
                 onSubmit={handleRegistration}
-                className="w-[90%] mx-auto md:max-w-4xl bg-white shadow-lg p-8 rounded-md"
+                className="w-[90%] mx-auto md:max-w-4xl bg-white dark:bg-[#1A1A1A] shadow-lg p-8 rounded-md"
             >
-                <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
+                <h2 className="text-2xl md:text-3xl dark:text-white font-bold text-center mb-4">
                     COMPLETE YOUR RACE <span className="text-yellow-500">REGISTRATION FORM</span>
                 </h2>
-                <p className="text-center text-gray-600 mb-6">
+                <p className="text-center text-gray-600 dark:text-gray-300 mb-6">
                     Fill out the form below to secure your spot in the marathon.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className='col-span-2 md:col-span-1'>
-                        <label className="block text-sm font-medium text-gray-700">First Name</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">First Name</label>
                         <input
                             type="text"
                             placeholder="first name*"
@@ -102,7 +102,7 @@ const Registration = () => {
                         />
                     </div>
                     <div className='col-span-2 md:col-span-1'>
-                        <label className="block text-sm font-medium text-gray-700">Last Name</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Last Name</label>
                         <input
                             type="text"
                             placeholder="last name*"
@@ -112,7 +112,7 @@ const Registration = () => {
                         />
                     </div>
                     <div className='col-span-2 md:col-span-1'>
-                        <label className="block text-sm font-medium text-gray-700">Email</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
                         <input
                             type="email"
                             placeholder="email*"
@@ -123,7 +123,7 @@ const Registration = () => {
                         />
                     </div>
                     <div className='col-span-2 md:col-span-1'>
-                        <label className="block text-sm font-medium text-gray-700">Phone</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone</label>
                         <input
                             type="number"
                             placeholder="phone*"
@@ -133,7 +133,7 @@ const Registration = () => {
                         />
                     </div>
                     <div className='col-span-2 md:col-span-1'>
-                        <label className="block text-sm font-medium text-gray-700">Marathon Title</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Marathon Title</label>
                         <input
                             type="text"
                             name="marathonTitle"
@@ -143,7 +143,7 @@ const Registration = () => {
                         />
                     </div>
                     <div className='col-span-2 md:col-span-1'>
-                        <label className="block text-sm font-medium text-gray-700">Start Date</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Start Date</label>
                         <input
                             type="text"
                             name="startDate"
@@ -153,7 +153,7 @@ const Registration = () => {
                         />
                     </div>
                     <div className="col-span-2">
-                        <label className="block text-sm font-medium text-gray-700">Additional Info (Optional)</label>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Additional Info (Optional)</label>
                         <textarea
                             placeholder="Write any additional notes here..."
                             name="additionalInfo"

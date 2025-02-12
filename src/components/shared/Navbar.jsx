@@ -9,7 +9,6 @@ import MobileDropdown from './MobileDropdown';
 const Navbar = () => {
     const { user, handleSignOut } = useContext(AuthContext);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
     const navigate = useNavigate();
     const scrollToTop = () => {
         window.scrollTo({
@@ -37,59 +36,61 @@ const Navbar = () => {
     }
 
     const links = <>
-    <li>
-        <NavLink
-            onClick={() => { scrollToTop() ,setDropdownOpen(!dropdownOpen)}}
-            to='/'
-            className={({ isActive }) =>
-                `relative pb-1 transition-all duration-500 dark:text-white 
+        <li>
+            <NavLink
+                onClick={scrollToTop}
+                to='/'
+                className={({ isActive }) =>
+                    `relative pb-1 transition-all duration-500 dark:text-white 
                 ${isActive ? 'font-medium border-b-2 border-[#fae102]' : 'hover:font-semibold'}
                 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#fae102] 
                 after:transition-all after:duration-500 hover:after:w-full`
-            }>
-            HOME
-        </NavLink>
-    </li>
-    <li>
-        <NavLink
-            onClick={() => { scrollToTop(); setDropdownOpen(false); }}
-            to='/marathons'
-            className={({ isActive }) =>
-                `relative pb-1 transition-all duration-500 dark:text-white
+                }>
+                HOME
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                onClick={scrollToTop}
+                to='/marathons'
+                className={({ isActive }) =>
+                    `relative pb-1 transition-all duration-500 dark:text-white
                 ${isActive ? 'font-medium border-b-2 border-[#fae102]' : 'hover:font-semibold'}
                 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#fae102] 
                 after:transition-all after:duration-500 hover:after:w-full`
-            }>
-            MARATHONS
-        </NavLink>
-    </li>
-    <li className={`${user ? 'block' : 'hidden'}`}>
-        <NavLink
-            onClick={() => { scrollToTop(); setDropdownOpen(false); }}
-            to='/dashboard/addMarathon'
-            className={({ isActive }) =>
-                `relative pb-1 transition-all duration-500 dark:text-white
+                }>
+                MARATHONS
+            </NavLink>
+        </li>
+        <li className={`${user ? 'block' : 'hidden'}`}>
+            <NavLink
+                onClick={scrollToTop}
+                to='/dashboard/addMarathon'
+                className={({ isActive }) =>
+                    `relative pb-1 transition-all duration-500 dark:text-white
                 ${isActive ? 'font-medium border-b-2 border-[#fae102]' : 'hover:font-semibold'}
                 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#fae102] 
                 after:transition-all after:duration-500 hover:after:w-full`
-            }>
-            DASHBOARD
-        </NavLink>
-    </li>
-    <li>
-        <NavLink
-            onClick={() => { scrollToTop(); setDropdownOpen(false); }}
-            to='/aboutUs'
-            className={({ isActive }) =>
-                `relative pb-1 transition-all duration-500 dark:text-white
+                }>
+                DASHBOARD
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                onClick={scrollToTop}
+                to='/aboutUs'
+                className={({ isActive }) =>
+                    `relative pb-1 transition-all duration-500 dark:text-white
                 ${isActive ? 'font-medium border-b-2 border-[#fae102]' : 'hover:font-semibold'}
                 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#fae102] 
                 after:transition-all after:duration-500 hover:after:w-full`
-            }>
-            ABOUT US
-        </NavLink>
-    </li>
-</>;
+                }>
+                ABOUT US
+            </NavLink>
+        </li>
+    </>;
+
+
 
     return (
         <div
@@ -110,7 +111,7 @@ const Navbar = () => {
                         <img className='w-8' src={logo} alt="" />
                         <p className="text-[28px] font-bold text-black dark:text-white">MILE<span className='text-[#f7c53a] font-medium'>SCAPE</span></p>
                     </Link>
-                    <ul className="hidden lg:flex items-center gap-3 lg:gap-5">
+                    <ul className="hidden lg:flex items-center gap-3 lg:gap-7">
                         {links}
                     </ul>
                 </div>
@@ -121,7 +122,7 @@ const Navbar = () => {
                             user ?
                                 <div className='flex items-center gap-2 lg:gap-4'>
                                     <div className="dropdown dropdown-end">
-                                        <div tabIndex={0} role="button" className="w-10 h-10  btn-circle avatar border-2 border-blue-800 mt-1">
+                                        <div tabIndex={0} role="button" className="w-10 h-10  btn-circle avatar border-2 border-blue-800 dark:border-blue-400 mt-1">
                                             <div className="w-full rounded-full ">
                                                 <img
                                                     referrerPolicy="no-referrer"

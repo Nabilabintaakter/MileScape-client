@@ -1,6 +1,5 @@
 import axios from 'axios';
 import bg from '../../assets/upcoming.jpg';
-import bgDark from '../../assets/upcoming-dark.jpg';
 import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import Header from '../../components/shared/Header';

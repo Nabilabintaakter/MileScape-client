@@ -31,11 +31,9 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
     image,
   });
   useEffect(() => {
-    // Add 'modal-open' class to the body when modal is open
     document.body.classList.add('modal-open');
     document.title = 'Update your Marathon | Milescape';
     return () => {
-      // Remove 'modal-open' class when modal is closed
       document.body.classList.remove('modal-open');
       document.title = 'My Marathon List | Milescape';
     };
@@ -130,14 +128,14 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
     >
       <Fade duration={700} cascade>
         <div
-          className="relative bg-white rounded shadow-lg w-[90%] max-w-7xl p-6 mx-auto lg:my-56 my-32 overflow-y-auto"
+          className="relative bg-white dark:bg-[#1A1A1A] rounded shadow-lg w-[90%] max-w-7xl p-6 mx-auto lg:my-56 my-32 overflow-y-auto"
 
         >
-          <h2 className="text-2xl font-bold text-center mb-4">Update Marathon</h2>
+          <h2 className="text-2xl font-bold dark:text-white text-center mb-4">Update Marathon</h2>
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium">Marathon Title</label>
+              <div className="col-span-2 md:col-span-1">
+                <label className="block text-sm font-medium dark:text-white">Marathon Title</label>
                 <input
                   type="text"
                   name="title"
@@ -150,8 +148,8 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
                   required
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium">
+              <div className="col-span-2 md:col-span-1">
+                <label className="block text-sm font-medium dark:text-white">
                   Start Registration Date
                 </label>
                 <DatePicker
@@ -162,8 +160,8 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
                   required
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium">
+              <div className="col-span-2 md:col-span-1">
+                <label className="block text-sm font-medium dark:text-white">
                   End Registration Date
                 </label>
                 <DatePicker
@@ -173,8 +171,8 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
                   className="w-full p-2 border border-gray-300 rounded"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium">
+              <div className="col-span-2 md:col-span-1">
+                <label className="block text-sm font-medium dark:text-white">
                   Marathon Start Date
                 </label>
                 <DatePicker
@@ -188,7 +186,7 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">Location</label>
+                <label className="block text-sm font-medium dark:text-white">Location</label>
                 <input
                   type="text"
                   name="location"
@@ -202,14 +200,14 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium">Running Distance</label>
+                <label className="block text-sm font-medium dark:text-white">Running Distance</label>
                 <select
                   name="distance"
                   value={formData.distance}
                   onChange={(e) =>
                     setFormData({ ...formData, distance: e.target.value })
                   }
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 border border-gray-300 rounded dark:text-white dark:bg-[#1A1A1A]"
                   required
                 >
                   <option value="">Select distance</option>
@@ -221,7 +219,7 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
               </div>
 
               <div className="col-span-2">
-                <label className="block text-sm font-medium">Description</label>
+                <label className="block text-sm font-medium dark:text-white">Description</label>
                 <textarea
                   name="description"
                   value={formData.description}
@@ -235,7 +233,7 @@ const UpdateMarathon = ({ onClose, marathon, reload, setReload }) => {
                 ></textarea>
               </div>
               <div className="col-span-2">
-                <label className="block text-sm font-medium">Marathon Image</label>
+                <label className="block text-sm font-medium dark:text-white">Marathon Image</label>
                 <input
                   type="url"
                   name="image"

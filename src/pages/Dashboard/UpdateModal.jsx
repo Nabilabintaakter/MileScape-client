@@ -73,18 +73,18 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
     className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-y-auto"
 >
     <Fade duration={700} cascade>
-        <div className="relative bg-white rounded shadow-lg w-[90%] max-w-7xl p-6 z-50 mx-auto pt-64 pb-[calc(100vh-500px)]">
-            <div className="scrollbar-hide max-h-[90vh] overflow-y-auto"> {/* Max height set */}
+        <div className="relative bg-white dark:bg-[#1A1A1A] rounded shadow-lg w-[90%] max-w-7xl p-6 z-50 mx-auto pt-64 pb-[calc(100vh-500px)]">
+            <div className=" ">
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-yellow-500">
-                    <span className="text-gray-800">UPDATE</span> YOUR REGISTRATION
+                    <span className="text-gray-800 dark:text-white">UPDATE</span> YOUR REGISTRATION
                 </h2>
-                <p className="text-center text-gray-600 mb-8">
+                <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
                     Modify your details below to keep your marathon registration up-to-date.
                 </p>
-                <form onSubmit={handleUpdateForm} className="w-full bg-white">
+                <form onSubmit={handleUpdateForm} className="w-full bg-white dark:bg-[#1A1A1A]">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                        <div className='col-span-2 md:col-span-1'>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                                 First Name
                             </label>
                             <input
@@ -96,8 +96,8 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                                 required
                             />
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                        <div className='col-span-2 md:col-span-1'>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                                 Last Name
                             </label>
                             <input
@@ -109,8 +109,8 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                                 required
                             />
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Email</label>
+                        <div className='col-span-2 md:col-span-1'>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
                             <input
                                 type="email"
                                 placeholder="Email address"
@@ -119,8 +119,8 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                             />
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Phone</label>
+                        <div className='col-span-2 md:col-span-1'>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Phone</label>
                             <input
                                 type="number"
                                 placeholder="Enter your phone number"
@@ -130,8 +130,8 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                                 required
                             />
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                        <div className='col-span-2 md:col-span-1'>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                                 Marathon Title
                             </label>
                             <input
@@ -142,8 +142,8 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                             />
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                        <div className='col-span-2 md:col-span-1'>
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                                 Start Date
                             </label>
                             <input
@@ -155,7 +155,7 @@ const UpdateModal = ({ onClose, apply, reload, setReload }) => {
                             />
                         </div>
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                                 Additional Info (Optional)
                             </label>
                             <textarea
